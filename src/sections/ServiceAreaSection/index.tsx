@@ -13,6 +13,7 @@ export const ServiceAreaSection = () => {
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
+        className="hidden md:block"
       >
         <MapDisplay />
       </motion.div>
@@ -37,6 +38,12 @@ export const ServiceAreaSection = () => {
             <p className="text-white/80 text-sm leading-[24.5px] max-w-[460px]">
               Faith Construction One is committed to delivering exceptional remodeling and construction services to homeowners throughout Northeast Florida. With deep local knowledge, dependable service, and quality craftsmanship, we bring your vision to life—right where you call home.
             </p>
+            <motion.div
+              variants={fadeUp}
+              className="mt-8 md:hidden"
+            >
+              <MapDisplay imageSrc="/map-jax.png" showMarkers={false} />
+            </motion.div>
           </motion.div>
           <div className="hidden md:block" />
         </div>

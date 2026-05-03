@@ -1,9 +1,31 @@
-export const MapDisplay = () => {
+type MapDisplayProps = {
+  imageSrc?: string;
+  showMarkers?: boolean;
+};
+
+export const MapDisplay = ({
+  imageSrc = "/assets/faith-areas-florida.png",
+  showMarkers = true,
+}: MapDisplayProps) => {
+  if (!showMarkers) {
+    return (
+      <div className="relative box-border caret-transparent outline-[3px] pointer-events-none w-full z-[1] mt-2 mb-4">
+        <img
+          src={imageSrc}
+          alt=""
+          className="box-border caret-transparent h-auto max-w-full outline-[3px] align-baseline w-full"
+        />
+        <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-gray-950 via-gray-950/65 to-transparent pointer-events-none" />
+        <div className="absolute left-0 right-0 top-0 h-12 bg-gradient-to-b from-gray-950/55 to-transparent pointer-events-none" />
+      </div>
+    );
+  }
+
   return (
     <div className="relative aspect-[4_/_3] box-border caret-transparent outline-[3px] pointer-events-none w-full z-[1] overflow-hidden mt-2 mb-4 right-auto inset-y-auto md:absolute md:aspect-auto md:w-9/12 md:mt-0 md:mb-0 md:right-0 md:top-0 md:bottom-[160px]">
       <div className="absolute aspect-auto box-border caret-transparent outline-[3px] transform-none inset-0 md:aspect-[1672_/_941] md:translate-x-[-58.0%] md:left-2/4 md:right-auto">
         <img
-          src="https://c.animaapp.com/moprd4x8gGBWRx/assets/faith-areas-florida.png"
+          src={imageSrc}
           alt=""
           className="box-border caret-transparent h-full max-w-full object-cover object-[58%_48%] outline-[3px] align-baseline w-full md:object-fill md:object-[50%_50%]"
         />
