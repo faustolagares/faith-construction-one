@@ -1025,7 +1025,7 @@
     .ctas { flex-direction: column; align-items: stretch; gap: 14px; }
     .btn-primary, .btn-secondary { width: 100%; justify-content: center; padding: 16px 20px; font-size: 11px; letter-spacing: 0.16em; }
     .btn-secondary { padding: 14px 0; }
-    .services-list { flex-direction: column; gap: 12px; margin-top: 36px; align-items: flex-end; padding-right: 24px; padding-bottom: 8px; }
+    .services-list { flex-direction: column; gap: 12px; margin-top: 36px; align-items: flex-end; padding-right: 24px; padding-bottom: 35px; }
     .service-row .line { width: 40px; }
     .service-row { font-size: 10px; letter-spacing: 0.2em; gap: 12px; }
     .footer { padding: 48px 20px 0; }
@@ -1045,8 +1045,11 @@
     .process-grid { grid-template-columns: 1fr; margin-bottom: 40px; }
     .process-step { padding: 28px 0; border-right: none; border-bottom: 1px solid rgba(10,22,40,0.10); }
     .process-step:last-child { border-bottom: none; }
-    .wwd { padding: 64px 20px 48px; }
-    .wwd-grid { gap: 40px; margin-bottom: 40px; }
+    .wwd { display: flex; flex-direction: column; gap: 40px; padding: 64px 20px 48px; }
+    .wwd-grid { display: contents; }
+    .wwd-grid > div:first-child { order: 1; }
+    .wwd-paver { order: 2; }
+    .wwd-services { order: 3; }
     .wwd-headline { font-size: 32px; }
     .wwd-item { grid-template-columns: 48px 1fr; gap: 16px; padding-bottom: 22px; }
     .wwd-item-icon { width: 48px; height: 48px; }
