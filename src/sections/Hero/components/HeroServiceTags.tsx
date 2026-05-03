@@ -21,6 +21,10 @@ export const HeroServiceTags = () => {
           variants={fadeIn}
           className="group flex items-center gap-x-3 text-white/80 text-[10px] font-semibold tracking-[2px] md:text-[11px] md:gap-x-4 md:tracking-[2.42px] hover:text-white transition-colors"
         >
+          <span
+            aria-hidden="true"
+            className="h-3 w-3 shrink-0 bg-red-600 [clip-path:polygon(50%_0%,61%_35%,98%_35%,68%_57%,79%_91%,50%_70%,21%_91%,32%_57%,2%_35%,39%_35%)]"
+          />
           <span className="transition-transform duration-300 group-hover:-translate-x-[25%]">
             {tag}
           </span>
