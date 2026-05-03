@@ -18,7 +18,7 @@ export const Hero = () => {
         {[0, 1].map((groupIndex) => (
           <div
             key={groupIndex}
-            className={`flex flex-col gap-y-3 md:gap-y-5 ${groupIndex === 1 ? "[mask-image:linear-gradient(to_bottom,black_0%,black_18%,transparent_58%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_18%,transparent_58%)]" : ""}`}
+            className={`flex flex-col gap-y-3 md:gap-y-5 ${groupIndex === 1 ? "[mask-image:linear-gradient(to_bottom,black_0%,black_46%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_46%,transparent_100%)] md:[mask-image:linear-gradient(to_bottom,black_0%,black_18%,transparent_58%)] md:[-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_18%,transparent_58%)]" : ""}`}
           >
             {heroStarRows.map((count, rowIndex) => (
               <div
@@ -29,7 +29,7 @@ export const Hero = () => {
                   <span
                     key={starIndex}
                     aria-hidden="true"
-                    className="block h-6 w-6 shrink-0 bg-white opacity-[0.03] [clip-path:polygon(50%_0%,61%_35%,98%_35%,68%_57%,79%_91%,50%_70%,21%_91%,32%_57%,2%_35%,39%_35%)] md:h-10 md:w-10"
+                    className="block h-6 w-6 shrink-0 bg-white opacity-[0.06] [clip-path:polygon(50%_0%,61%_35%,98%_35%,68%_57%,79%_91%,50%_70%,21%_91%,32%_57%,2%_35%,39%_35%)] md:h-10 md:w-10 md:opacity-[0.03]"
                   />
                 ))}
               </div>
