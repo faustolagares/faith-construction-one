@@ -135,12 +135,35 @@
 }
 
 @layer base {
+  @keyframes scrollDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+
+    35% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateY(260%);
+    }
+  }
+
   * {
     @apply border-border;
   }
 
+  html,
+  body,
+  #app {
+    background-color: #030712;
+    min-height: 100%;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }

@@ -40,7 +40,7 @@ export const ServiceAreaSection = () => {
             </p>
             <motion.div
               variants={fadeUp}
-              className="mt-8 md:hidden"
+              className="-mx-5 mt-8 md:hidden"
             >
               <MapDisplay imageSrc="/map-jax.png" showMarkers={false} />
             </motion.div>
