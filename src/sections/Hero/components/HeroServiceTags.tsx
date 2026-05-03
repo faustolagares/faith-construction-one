@@ -13,7 +13,7 @@ export const HeroServiceTags = () => {
   return (
     <motion.div
       variants={heroTagsStagger}
-      className="relative z-[11] flex flex-col items-end gap-y-3 mt-6 pb-8 md:absolute md:gap-y-[18px] md:mt-0 md:pb-0 md:right-0 md:bottom-[60px]"
+      className="relative z-[11] hidden flex-col items-end gap-y-3 mt-6 pb-8 md:absolute md:flex md:gap-y-[18px] md:mt-0 md:pb-0 md:right-0 md:bottom-[60px]"
     >
       {tags.map((tag) => (
         <motion.div
