@@ -3,6 +3,7 @@ import { Navbar } from "@/sections/Navbar";
 import { Hero } from "@/sections/Hero";
 import { TrustBar } from "@/sections/TrustBar";
 import { ServicesSection } from "@/sections/ServicesSection";
+import { ServicesShowcaseSection } from "@/sections/ServicesShowcaseSection";
 import { ProjectsSection } from "@/sections/ProjectsSection";
 import { ReviewsSection } from "@/sections/ReviewsSection";
 import { ServiceAreaSection } from "@/sections/ServiceAreaSection";
@@ -17,6 +18,7 @@ const HomePage = () => (
     <Hero />
     <TrustBar />
     <ServicesSection />
+    <ServicesShowcaseSection />
     <ProjectsSection />
     <ReviewsSection />
     <ServiceAreaSection />

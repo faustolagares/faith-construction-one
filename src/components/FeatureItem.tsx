@@ -9,7 +9,7 @@ export type FeatureItemProps = {
 export const FeatureItem = (props: FeatureItemProps) => {
   return (
     <div
-      className={`grid grid-cols-[40px_1fr] md:grid-cols-[48px_1fr] items-center gap-x-3.5 md:gap-x-[18px] gap-y-3.5 py-[18px] md:py-2 ${props.containerVariant}`}
+      className={`grid grid-cols-[40px_1fr] md:grid-cols-[48px_1fr] items-start gap-x-3.5 md:gap-x-[18px] gap-y-3.5 py-[18px] md:py-2 ${props.containerVariant}`}
     >
       <div className="shrink-0 h-10 w-10 md:h-12 md:w-12 text-white/90">
         <img src={props.iconSrc} alt={props.iconAlt} className="h-full w-full" />
