@@ -90,8 +90,12 @@ export const ContactSection = () => {
                   <circle cx="12" cy="10" r="3" />
                 </svg>
                 <div>
-                  <div className="text-[11px] font-bold tracking-[2px] uppercase text-white/30 mb-1">Service Area</div>
-                  <span className="text-white text-[15px] font-medium">Northeast Florida</span>
+                  <div className="text-[11px] font-bold tracking-[2px] uppercase text-white/30 mb-1">Address</div>
+                  <span className="text-white text-[15px] font-medium">
+                    10777 Scott Mill Rd,
+                    <br />
+                    Jacksonville, FL 32223
+                  </span>
                 </div>
               </div>
             </motion.div>

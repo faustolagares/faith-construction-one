@@ -19,7 +19,7 @@ export const FooterBottom = () => {
             className="box-border caret-transparent h-[18px] outline-[3px] align-baseline w-[18px]"
           />
         </span>
-        Jacksonville, Florida
+        10777 Scott Mill Rd, Jacksonville, FL 32223
       </div>
       <div className="relative text-white/60 text-[11px] font-semibold items-center box-border caret-transparent gap-x-3.5 flex justify-start tracking-[2.42px] leading-[18px] min-h-[auto] min-w-[auto] outline-[3px] gap-y-3.5 uppercase md:justify-end md:leading-normal before:accent-auto before:bg-red-600 before:box-border before:caret-transparent before:text-white/60 before:hidden before:text-[11px] before:not-italic before:normal-nums before:font-semibold before:h-3.5 before:tracking-[2.42px] before:leading-[normal] before:list-outside before:list-disc before:opacity-60 before:outline-[3px] before:pointer-events-auto before:absolute before:text-start before:no-underline before:indent-[0px] before:uppercase before:transform-none before:visible before:w-px before:border-separate before:-left-px before:top-2/4 before:font-space_grotesk before:md:block before:md:translate-y-[-7px]">
         <span>
