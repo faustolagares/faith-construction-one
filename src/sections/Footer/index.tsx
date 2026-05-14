@@ -6,7 +6,7 @@ import { fadeUp, staggerContainer, viewport } from "@/lib/motion";
 
 export const Footer = () => {
   return (
-    <footer className="relative bg-gray-950 overflow-hidden pt-12 px-5 border-t border-white/[0.06] md:pt-[90px] md:px-8 lg:px-10">
+    <footer className="relative bg-gray-950 text-white overflow-hidden pt-12 px-5 border-t border-white/[0.06] md:pt-[90px] md:px-8 lg:px-10">
       <img src="https://c.animaapp.com/moprd4x8gGBWRx/assets/icon-44.svg" alt="" aria-hidden="true" className="absolute hidden md:block opacity-25 pointer-events-none w-[200px] z-[1] left-[-2px] top-[30px]" />
       <img src="https://c.animaapp.com/moprd4x8gGBWRx/assets/icon-45.svg" alt="" aria-hidden="true" className="absolute hidden md:block opacity-50 pointer-events-none w-[360px] z-[1] right-0 inset-y-0" />
 

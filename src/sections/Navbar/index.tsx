@@ -14,6 +14,7 @@ export const Navbar = () => {
     { href: "#about", label: "ABOUT" },
     { href: "#process", label: "PROCESS" },
     { href: "#areas", label: "AREAS" },
+    { href: "/blog", label: "BLOG" },
     { href: "/contact", label: "CONTACT" },
   ];
 
@@ -22,7 +23,7 @@ export const Navbar = () => {
       initial={{ y: -12, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      className="relative bg-gray-950 box-border caret-transparent z-30 border-b border-white/10 px-5 md:px-8 lg:px-10"
+      className="relative bg-gray-950 text-white box-border caret-transparent z-30 border-b border-white/10 px-5 md:px-8 lg:px-10"
     >
       {/* Top bar */}
       <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between py-2">

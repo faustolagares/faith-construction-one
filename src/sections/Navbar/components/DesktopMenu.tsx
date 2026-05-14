@@ -8,6 +8,7 @@ export const DesktopMenu = () => {
         { href: "#about", label: "ABOUT" },
         { href: "#process", label: "PROCESS" },
         { href: "#areas", label: "AREAS" },
+        { href: "/blog", label: "BLOG" },
         { href: "/contact", label: "CONTACT" },
       ].map((link) => (
         <a

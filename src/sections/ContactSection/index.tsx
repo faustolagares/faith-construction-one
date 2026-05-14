@@ -34,16 +34,55 @@ const SectionLabel = ({ children }: { children: React.ReactNode }) => (
   </div>
 );
 
+type SubmitStatus = "idle" | "submitting" | "success" | "error";
+
 export const ContactSection = () => {
   const [service, setService] = useState("");
   const [budget, setBudget] = useState("");
   const [timeline, setTimeline] = useState("");
   const [fields, setFields] = useState({ name: "", phone: "", email: "", message: "" });
+  const [status, setStatus] = useState<SubmitStatus>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setFields((p) => ({ ...p, [e.target.name]: e.target.value }));
 
-  const handleSubmit = (e: React.FormEvent) => e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (status === "submitting") return;
+    setStatus("submitting");
+    setErrorMsg("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: fields.name,
+          email: fields.email,
+          phone: fields.phone,
+          message: fields.message,
+          service,
+          budget,
+          timeline,
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Something went wrong. Please try again.");
+      }
+
+      setStatus("success");
+      setFields({ name: "", phone: "", email: "", message: "" });
+      setService("");
+      setBudget("");
+      setTimeline("");
+    } catch (err) {
+      setStatus("error");
+      setErrorMsg(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    }
+  };
 
   return (
     <section className="relative bg-gray-950 overflow-hidden pt-16 pb-16 px-5 md:pt-[120px] md:pb-[120px] md:px-8 lg:px-10">
@@ -231,13 +270,40 @@ export const ContactSection = () => {
                 />
               </div>
 
-              <button
-                type="submit"
-                className="bg-red-600 hover:bg-red-700 text-white text-[11px] font-bold tracking-[1.98px] uppercase px-8 py-4 flex items-center gap-x-3 w-fit transition-colors"
-              >
-                SEND MESSAGE
-                <span className="relative bg-white inline-block h-px w-3.5 after:content-[''] after:block after:absolute after:h-[7px] after:w-[7px] after:border-r after:border-t after:border-white after:right-0 after:top-[-3px] after:rotate-45" />
-              </button>
+              <div className="flex flex-col gap-y-4">
+                <button
+                  type="submit"
+                  disabled={status === "submitting"}
+                  className="bg-red-600 hover:bg-red-700 disabled:opacity-60 disabled:cursor-not-allowed text-white text-[11px] font-bold tracking-[1.98px] uppercase px-8 py-4 flex items-center gap-x-3 w-fit transition-colors"
+                >
+                  {status === "submitting" ? "SENDING…" : "SEND MESSAGE"}
+                  <span className="relative bg-white inline-block h-px w-3.5 after:content-[''] after:block after:absolute after:h-[7px] after:w-[7px] after:border-r after:border-t after:border-white after:right-0 after:top-[-3px] after:rotate-45" />
+                </button>
+
+                {status === "success" && (
+                  <div
+                    role="status"
+                    className="border-l-2 border-red-600 bg-white/5 px-4 py-3 text-[13px] leading-[20px] text-white/80"
+                  >
+                    <span className="block text-[10px] font-bold tracking-[1.8px] uppercase text-red-500 mb-1">
+                      Request received
+                    </span>
+                    Thanks — check your inbox for a confirmation. We'll be in touch within a few hours.
+                  </div>
+                )}
+
+                {status === "error" && (
+                  <div
+                    role="alert"
+                    className="border-l-2 border-red-600 bg-red-600/10 px-4 py-3 text-[13px] leading-[20px] text-white/80"
+                  >
+                    <span className="block text-[10px] font-bold tracking-[1.8px] uppercase text-red-500 mb-1">
+                      Something went wrong
+                    </span>
+                    {errorMsg || "Please try again or call us directly at (904) 555-0198."}
+                  </div>
+                )}
+              </div>
 
             </form>
           </motion.div>

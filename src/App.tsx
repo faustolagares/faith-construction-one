@@ -11,6 +11,8 @@ import { ProcessSection } from "@/sections/ProcessSection";
 import { CtaSection } from "@/sections/CtaSection";
 import { Footer } from "@/sections/Footer";
 import { ContactPage } from "@/pages/ContactPage";
+import { BlogPage } from "@/pages/BlogPage";
+import { PostPage } from "@/pages/PostPage";
 
 const HomePage = () => (
   <div className="text-white text-base font-normal bg-gray-950 min-h-screen min-w-[320px] overflow-x-hidden font-space_grotesk">
@@ -33,6 +35,8 @@ export const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:slug" element={<PostPage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </BrowserRouter>
