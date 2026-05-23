@@ -22,7 +22,7 @@ const differentiators = [
 
 export const ServicesSection = () => {
   return (
-    <section id="about" className="relative bg-gray-950 overflow-hidden pt-16 pb-12 px-5 md:pt-[120px] md:pb-[100px] md:px-8 lg:px-10">
+    <section id="about" className="relative bg-gray-950 overflow-hidden pt-16 pb-12 px-5 scroll-mt-28 md:pt-[120px] md:pb-[100px] md:px-8 lg:px-10">
       <img
         src="https://c.animaapp.com/moprd4x8gGBWRx/assets/icon-8.svg"
         alt=""

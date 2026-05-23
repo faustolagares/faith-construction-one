@@ -5,6 +5,10 @@ import { FooterBottom } from "@/sections/Footer/components/FooterBottom";
 import { CookieSettingsButton } from "@/components/CookieConsent/CookieSettingsButton";
 import { fadeUp, staggerContainer, viewport } from "@/lib/motion";
 
+const OFFICE_ADDRESS = "10777 Scott Mill Rd, Jacksonville, FL 32223";
+const OFFICE_MAPS_URL =
+  "https://maps.google.com/?q=10777+Scott+Mill+Rd,+Jacksonville,+FL+32223";
+
 export const Footer = () => {
   return (
     <footer className="relative bg-gray-950 text-white overflow-hidden pt-12 px-5 border-t border-white/[0.06] md:pt-[90px] md:px-8 lg:px-10">
@@ -24,10 +28,10 @@ export const Footer = () => {
             <FooterLinksColumn
               title="Services"
               items={[
-                { text: "Kitchen Remodeling", href: "#" },
-                { text: "Bathroom Remodeling", href: "#" },
-                { text: "Interior Improvements", href: "#" },
-                { text: "Outdoor Living", href: "#" },
+                { text: "Kitchen Remodeling", href: "/#kitchen" },
+                { text: "Bathroom Remodeling", href: "/#bathroom" },
+                { text: "Interior Improvements", href: "/#interior" },
+                { text: "Outdoor Living", href: "/#outdoor" },
               ]}
             />
           </motion.div>
@@ -37,7 +41,7 @@ export const Footer = () => {
               items={[
                 { text: "About", href: "/#about" },
                 { text: "Projects", href: "/#projects" },
-                { text: "Process", href: "/#process" },
+                { text: "Blog", href: "/blog" },
                 { text: "Contact", href: "/contact" },
               ]}
             />
@@ -61,7 +65,11 @@ export const Footer = () => {
             <FooterLinksColumn
               title="Contact"
               items={[
-                { text: "10777 Scott Mill Rd, Jacksonville, FL 32223", iconSrc: "https://c.animaapp.com/moprd4x8gGBWRx/assets/icon-46.svg" },
+                {
+                  text: OFFICE_ADDRESS,
+                  href: OFFICE_MAPS_URL,
+                  iconSrc: "https://c.animaapp.com/moprd4x8gGBWRx/assets/icon-46.svg",
+                },
                 { text: "www.faithconstruction1.com", href: "https://www.faithconstruction1.com/", iconSrc: "https://c.animaapp.com/moprd4x8gGBWRx/assets/icon-47.svg" },
                 { text: "hello@faithconstructionone.com", href: "mailto:hello@faithconstructionone.com", iconSrc: "https://c.animaapp.com/moprd4x8gGBWRx/assets/icon-48.svg" },
               ]}

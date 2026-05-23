@@ -1,3 +1,7 @@
+const OFFICE_ADDRESS = "10777 Scott Mill Rd, Jacksonville, FL 32223";
+const OFFICE_MAPS_URL =
+  "https://maps.google.com/?q=10777+Scott+Mill+Rd,+Jacksonville,+FL+32223";
+
 export const FooterBottom = () => {
   return (
     <div className="relative z-[2] pt-6 pb-8 border-t border-white/10 md:pt-7 md:pb-9">
@@ -20,7 +24,14 @@ export const FooterBottom = () => {
               className="h-[18px] w-[18px]"
             />
           </span>
-          10777 Scott Mill Rd, Jacksonville, FL 32223
+          <a
+            href={OFFICE_MAPS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-white transition-colors"
+          >
+            {OFFICE_ADDRESS}
+          </a>
         </div>
       </div>
 

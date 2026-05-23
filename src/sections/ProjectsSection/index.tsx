@@ -21,7 +21,7 @@ export const ProjectsSection = () => {
   const next = () => setCurrent((c) => (c + 1) % total);
 
   return (
-    <section id="projects" className="relative text-slate-900 bg-stone-100 overflow-hidden pt-14 pb-12 px-5 md:pt-[100px] md:pb-20 md:px-8 lg:px-10">
+    <section id="projects" className="relative text-slate-900 bg-stone-100 overflow-hidden pt-14 pb-12 px-5 scroll-mt-28 md:pt-[100px] md:pb-20 md:px-8 lg:px-10">
       <img src="https://c.animaapp.com/moprd4x8gGBWRx/assets/icon-17.svg" alt="" aria-hidden="true" className="absolute opacity-10 pointer-events-none w-[200px] z-[1] -left-10 top-[50px]" />
       <img src="https://c.animaapp.com/moprd4x8gGBWRx/assets/icon-18.svg" alt="" aria-hidden="true" className="absolute h-[280px] opacity-[0.18] pointer-events-none w-[280px] z-[1] -right-10 top-0" />
 

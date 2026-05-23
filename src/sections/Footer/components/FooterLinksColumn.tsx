@@ -32,7 +32,13 @@ const renderLink = (
     );
   }
   return (
-    <a href={item.href} className={cls}>
+    <a
+      href={item.href}
+      className={cls}
+      {...(item.href.startsWith("http") || item.href.startsWith("mailto:")
+        ? { target: "_blank", rel: "noopener noreferrer" }
+        : {})}
+    >
       {item.text}
     </a>
   );

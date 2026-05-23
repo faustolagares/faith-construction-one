@@ -4,10 +4,22 @@ import { ConsentProvider } from "@/context/ConsentContext";
 import { CookieConsent } from "@/components/CookieConsent";
 
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
+    if (hash) {
+      const id = hash.slice(1);
+      const scrollToTarget = () => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      };
+      requestAnimationFrame(scrollToTarget);
+      const timeout = window.setTimeout(scrollToTarget, 100);
+      return () => window.clearTimeout(timeout);
+    }
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname, hash]);
   return null;
 };
 import { Navbar } from "@/sections/Navbar";

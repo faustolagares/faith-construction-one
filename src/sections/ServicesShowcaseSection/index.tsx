@@ -11,6 +11,7 @@ const featuredFeatures = [
 
 const serviceCards = [
   {
+    id: "kitchen",
     title: "Kitchen",
     titleSecondLine: "Remodeling",
     description: "Functional kitchens designed around the way you live.",
@@ -18,6 +19,7 @@ const serviceCards = [
     iconSrc: "/assets/icons/kitchen.svg",
   },
   {
+    id: "bathroom",
     title: "Bathroom",
     titleSecondLine: "Remodeling",
     description: "Comfortable spaces with quality materials and timeless details.",
@@ -25,6 +27,7 @@ const serviceCards = [
     iconSrc: "/assets/icons/bathroom.svg",
   },
   {
+    id: "interior",
     title: "Interior",
     titleSecondLine: "Improvements",
     description: "Upgrades that add beauty, function, and long-term value.",
@@ -32,6 +35,7 @@ const serviceCards = [
     iconSrc: "/assets/icons/interior.svg",
   },
   {
+    id: "outdoor",
     title: "Outdoor",
     titleSecondLine: "Living",
     description: "Outdoor spaces designed for relaxation and connection.",
@@ -60,7 +64,7 @@ export const ServicesShowcaseSection = () => {
   }, []);
 
   return (
-    <section className="relative bg-gray-950 overflow-hidden px-5 py-16 md:px-8 md:py-[110px] lg:px-10">
+    <section id="services" className="relative bg-gray-950 overflow-hidden px-5 py-16 scroll-mt-28 md:px-8 md:py-[110px] lg:px-10">
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_50%_0%,rgba(204,31,45,0.08)_0%,rgba(3,7,18,0)_38%)]" />
       <div className="relative z-[2] mx-auto w-full max-w-[1440px]">
         <motion.div
@@ -143,9 +147,10 @@ export const ServicesShowcaseSection = () => {
         >
           {serviceCards.map((card) => (
             <motion.article
-              key={card.title}
+              key={card.id}
+              id={card.id}
               variants={fadeUp}
-              className="group relative aspect-[3/4] overflow-hidden border border-white/10 bg-gray-950"
+              className="group relative aspect-[3/4] overflow-hidden border border-white/10 bg-gray-950 scroll-mt-28"
             >
               <div
                 className="absolute inset-0 hidden bg-cover bg-center transition-transform duration-700 group-hover:scale-105 md:block"
