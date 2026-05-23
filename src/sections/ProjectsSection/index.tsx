@@ -4,7 +4,7 @@ import { ValuePoints } from "@/sections/ProjectsSection/components/ValuePoints";
 import { fadeUp, fadeLeft, staggerContainer, viewport } from "@/lib/motion";
 
 const projects = [
-  { category: "Kitchen Remodeling", title: "Riverside Kitchen", location: "Jacksonville, FL", imageUrl: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=600&q=70" },
+  { category: "Kitchen Remodeling", title: "Riverside Kitchen", location: "Jacksonville, FL", imageUrl: "https://imagedelivery.net/O1Es2ZMHV0HF7g71pX5Prg/60dfc00b-a528-4285-ea4c-26c10f6c2500/public" },
   { category: "Paver Driveway", title: "Coastal Driveway", location: "Ponte Vedra Beach, FL", imageUrl: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=70" },
   { category: "Bathroom Remodeling", title: "Modern Oasis", location: "Fernandina Beach, FL", imageUrl: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=600&q=70" },
   { category: "Outdoor Living", title: "Backyard Retreat", location: "St. Johns, FL", imageUrl: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=70" },
