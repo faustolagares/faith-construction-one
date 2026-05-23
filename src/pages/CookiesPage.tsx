@@ -130,8 +130,8 @@ export const CookiesPage = () => (
     <LegalSection title="Contact">
       <LegalParagraph>
         Questions about cookies? Email{" "}
-        <LegalLink href="mailto:info@faithconstruction1.com">
-          info@faithconstruction1.com
+        <LegalLink href="mailto:hello@faithconstructionone.com">
+          hello@faithconstructionone.com
         </LegalLink>{" "}
         or visit our{" "}
         <LegalLink to="/privacy">Privacy Policy</LegalLink>.

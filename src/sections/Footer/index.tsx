@@ -63,7 +63,7 @@ export const Footer = () => {
               items={[
                 { text: "10777 Scott Mill Rd, Jacksonville, FL 32223", iconSrc: "https://c.animaapp.com/moprd4x8gGBWRx/assets/icon-46.svg" },
                 { text: "www.faithconstruction1.com", href: "https://www.faithconstruction1.com/", iconSrc: "https://c.animaapp.com/moprd4x8gGBWRx/assets/icon-47.svg" },
-                { text: "(904) 555-0198", href: "tel://+19045550198", iconSrc: "https://c.animaapp.com/moprd4x8gGBWRx/assets/icon-48.svg" },
+                { text: "hello@faithconstructionone.com", href: "mailto:hello@faithconstructionone.com", iconSrc: "https://c.animaapp.com/moprd4x8gGBWRx/assets/icon-48.svg" },
               ]}
             />
           </motion.div>

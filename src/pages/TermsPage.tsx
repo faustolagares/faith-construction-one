@@ -123,12 +123,10 @@ export const TermsPage = () => (
     <LegalSection title="Contact">
       <LegalParagraph>
         Questions about these Terms? Contact us at{" "}
-        <LegalLink href="mailto:info@faithconstruction1.com">
-          info@faithconstruction1.com
-        </LegalLink>{" "}
-        or{" "}
-        <LegalLink href="tel:+19045550198">(904) 555-0198</LegalLink>.
-        See also our{" "}
+        <LegalLink href="mailto:hello@faithconstructionone.com">
+          hello@faithconstructionone.com
+        </LegalLink>
+        . See also our{" "}
         <LegalLink to="/privacy">Privacy Policy</LegalLink>.
       </LegalParagraph>
     </LegalSection>

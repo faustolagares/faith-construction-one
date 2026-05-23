@@ -139,8 +139,8 @@ export const PrivacyPage = () => (
         To exercise these rights, submit a request via our{" "}
         <LegalLink to="/data-deletion">Data Deletion Request</LegalLink> page
         or email{" "}
-        <LegalLink href="mailto:info@faithconstruction1.com">
-          info@faithconstruction1.com
+        <LegalLink href="mailto:hello@faithconstructionone.com">
+          hello@faithconstructionone.com
         </LegalLink>
         . We will respond within the timeframe required by applicable law.
       </LegalParagraph>
@@ -169,12 +169,9 @@ export const PrivacyPage = () => (
         <br />
         10777 Scott Mill Rd, Jacksonville, FL 32223
         <br />
-        Phone:{" "}
-        <LegalLink href="tel:+19045550198">(904) 555-0198</LegalLink>
-        <br />
         Email:{" "}
-        <LegalLink href="mailto:info@faithconstruction1.com">
-          info@faithconstruction1.com
+        <LegalLink href="mailto:hello@faithconstructionone.com">
+          hello@faithconstructionone.com
         </LegalLink>
       </LegalParagraph>
     </LegalSection>

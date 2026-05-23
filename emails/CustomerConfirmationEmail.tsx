@@ -254,19 +254,12 @@ export default function CustomerConfirmationEmail({
                 margin: 0,
               }}
             >
-              Need to reach us sooner? Call{" "}
+              Need to reach us sooner? Email{" "}
               <Link
-                href="tel:+19045550198"
+                href="mailto:hello@faithconstructionone.com"
                 style={{ color: colors.ink, textDecoration: "underline" }}
               >
-                (904) 555-0198
-              </Link>{" "}
-              or email{" "}
-              <Link
-                href="mailto:info@faithconstruction1.com"
-                style={{ color: colors.ink, textDecoration: "underline" }}
-              >
-                info@faithconstruction1.com
+                hello@faithconstructionone.com
               </Link>
               .
             </Text>

@@ -1,34 +1,40 @@
 export const FooterBottom = () => {
   return (
-    <div className="relative items-center box-border caret-transparent gap-x-3.5 grid grid-cols-[1fr] outline-[3px] gap-y-3.5 z-[2] pt-6 pb-8 border-t-white/10 border-b-white border-x-white border-t md:gap-x-0 md:grid-cols-[1fr_1fr_1.4fr] md:gap-y-0 md:pt-7 md:pb-9">
-      <div className="relative text-white/60 text-[11px] font-semibold items-center box-border caret-transparent gap-x-3.5 flex justify-start tracking-[2.42px] min-h-[auto] min-w-[auto] outline-[3px] gap-y-3.5 uppercase md:justify-normal">
-        <span className="text-red-600 items-center box-border caret-transparent flex shrink-0 h-[18px] justify-center min-h-[auto] min-w-[auto] outline-[3px] w-[18px]">
-          <img
-            src="https://c.animaapp.com/moprd4x8gGBWRx/assets/icon-49.svg"
-            alt="Icon"
-            className="box-border caret-transparent h-[18px] outline-[3px] align-baseline w-[18px]"
-          />
-        </span>
-        Licensed &amp; Insured
+    <div className="relative z-[2] pt-6 pb-8 border-t border-white/10 md:pt-7 md:pb-9">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3.5 gap-x-3.5 md:gap-y-0 md:gap-x-0 pb-6 md:pb-7 border-b border-white/10">
+        <div className="relative text-white/60 text-[11px] font-semibold items-center flex justify-start tracking-[2.42px] gap-x-3.5 uppercase md:justify-normal">
+          <span className="text-red-600 flex shrink-0 h-[18px] w-[18px] items-center justify-center">
+            <img
+              src="https://c.animaapp.com/moprd4x8gGBWRx/assets/icon-49.svg"
+              alt=""
+              className="h-[18px] w-[18px]"
+            />
+          </span>
+          Licensed &amp; Insured
+        </div>
+        <div className="relative text-white/60 text-[11px] font-semibold items-center flex justify-start tracking-[2.42px] gap-x-3.5 uppercase md:justify-end">
+          <span className="text-red-600 flex shrink-0 h-[18px] w-[18px] items-center justify-center">
+            <img
+              src="https://c.animaapp.com/moprd4x8gGBWRx/assets/icon-46.svg"
+              alt=""
+              className="h-[18px] w-[18px]"
+            />
+          </span>
+          10777 Scott Mill Rd, Jacksonville, FL 32223
+        </div>
       </div>
-      <div className="relative text-white/60 text-[11px] font-semibold items-center box-border caret-transparent gap-x-3.5 flex justify-start tracking-[2.42px] min-h-[auto] min-w-[auto] outline-[3px] gap-y-3.5 uppercase md:justify-center before:accent-auto before:bg-red-600 before:box-border before:caret-transparent before:text-white/60 before:hidden before:text-[11px] before:not-italic before:normal-nums before:font-semibold before:h-3.5 before:tracking-[2.42px] before:leading-[normal] before:list-outside before:list-disc before:opacity-60 before:outline-[3px] before:pointer-events-auto before:absolute before:text-start before:no-underline before:indent-[0px] before:uppercase before:transform-none before:visible before:w-px before:border-separate before:-left-px before:top-2/4 before:font-space_grotesk before:md:block before:md:translate-y-[-7px]">
-        <span className="text-red-600 items-center box-border caret-transparent flex shrink-0 h-[18px] justify-center min-h-[auto] min-w-[auto] outline-[3px] w-[18px]">
-          <img
-            src="https://c.animaapp.com/moprd4x8gGBWRx/assets/icon-46.svg"
-            alt="Icon"
-            className="box-border caret-transparent h-[18px] outline-[3px] align-baseline w-[18px]"
-          />
-        </span>
-        10777 Scott Mill Rd, Jacksonville, FL 32223
-      </div>
-      <div className="relative text-white/60 text-[11px] font-semibold items-center box-border caret-transparent gap-x-3.5 flex justify-start tracking-[2.42px] leading-[18px] min-h-[auto] min-w-[auto] outline-[3px] gap-y-3.5 uppercase md:justify-end md:leading-normal before:accent-auto before:bg-red-600 before:box-border before:caret-transparent before:text-white/60 before:hidden before:text-[11px] before:not-italic before:normal-nums before:font-semibold before:h-3.5 before:tracking-[2.42px] before:leading-[normal] before:list-outside before:list-disc before:opacity-60 before:outline-[3px] before:pointer-events-auto before:absolute before:text-start before:no-underline before:indent-[0px] before:uppercase before:transform-none before:visible before:w-px before:border-separate before:-left-px before:top-2/4 before:font-space_grotesk before:md:block before:md:translate-y-[-7px]">
-        <span>
-          © 2026 Faith Construction One
-          <br className="md:hidden" />
-          <span className="hidden md:inline"> &nbsp;·&nbsp; </span>
-          All Rights Reserved
-        </span>
-      </div>
+
+      <p className="text-white/60 text-[11px] font-semibold tracking-[2.42px] uppercase text-center pt-6 md:pt-7 leading-[18px] md:leading-normal">
+        © 2026 Faith Construction One · All Rights Reserved ·{" "}
+        <a
+          href="https://www.nexlink.ai"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-red-500 hover:text-red-400 transition-colors normal-case tracking-normal font-medium"
+        >
+          Powered by NexLink
+        </a>
+      </p>
     </div>
   );
 };

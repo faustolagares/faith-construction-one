@@ -71,11 +71,10 @@ export const DoNotSellPage = () => (
     <LegalSection title="Contact">
       <LegalParagraph>
         Questions about your privacy rights? Contact us at{" "}
-        <LegalLink href="mailto:info@faithconstruction1.com">
-          info@faithconstruction1.com
-        </LegalLink>{" "}
-        or <LegalLink href="tel:+19045550198">(904) 555-0198</LegalLink>.
-        See our full <LegalLink to="/privacy">Privacy Policy</LegalLink>.
+        <LegalLink href="mailto:hello@faithconstructionone.com">
+          hello@faithconstructionone.com
+        </LegalLink>
+        . See our full <LegalLink to="/privacy">Privacy Policy</LegalLink>.
       </LegalParagraph>
     </LegalSection>
   </LegalPageLayout>

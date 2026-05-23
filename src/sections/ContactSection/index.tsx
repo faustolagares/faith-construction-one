@@ -117,21 +117,12 @@ export const ContactSection = () => {
             <motion.div variants={heroFadeUp} className="flex flex-col gap-y-7">
               <div className="flex items-start gap-x-4">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-red-600 mt-0.5 shrink-0">
-                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
-                </svg>
-                <div>
-                  <div className="text-[11px] font-bold tracking-[2px] uppercase text-white/30 mb-1">Phone</div>
-                  <a href="tel:+19045550198" className="text-white text-[15px] font-medium hover:text-red-500 transition-colors">(904) 555-0198</a>
-                </div>
-              </div>
-              <div className="flex items-start gap-x-4">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-red-600 mt-0.5 shrink-0">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                   <polyline points="22,6 12,13 2,6" />
                 </svg>
                 <div>
                   <div className="text-[11px] font-bold tracking-[2px] uppercase text-white/30 mb-1">Email</div>
-                  <a href="mailto:info@faithconstruction1.com" className="text-white text-[15px] font-medium hover:text-red-500 transition-colors">info@faithconstruction1.com</a>
+                  <a href="mailto:hello@faithconstructionone.com" className="text-white text-[15px] font-medium hover:text-red-500 transition-colors">hello@faithconstructionone.com</a>
                 </div>
               </div>
               <div className="flex items-start gap-x-4">
@@ -341,7 +332,7 @@ export const ContactSection = () => {
                     <span className="block text-[10px] font-bold tracking-[1.8px] uppercase text-red-500 mb-1">
                       Something went wrong
                     </span>
-                    {errorMsg || "Please try again or call us directly at (904) 555-0198."}
+                    {errorMsg || "Please try again or email us at hello@faithconstructionone.com."}
                   </div>
                 )}
               </motion.div>

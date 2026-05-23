@@ -63,8 +63,8 @@ export const DataDeletionPage = () => {
       <LegalParagraph>
         You have the right to request that we delete or provide access to
         personal information we hold about you. Use the form below or email{" "}
-        <LegalLink href="mailto:info@faithconstruction1.com">
-          info@faithconstruction1.com
+        <LegalLink href="mailto:hello@faithconstructionone.com">
+          hello@faithconstructionone.com
         </LegalLink>
         . We will verify your identity and respond within 30 days (or as
         required by applicable law).
@@ -167,7 +167,7 @@ export const DataDeletionPage = () => {
                   Something went wrong
                 </span>
                 {errorMsg ||
-                  "Please try again or email info@faithconstruction1.com directly."}
+                  "Please try again or email hello@faithconstructionone.com directly."}
               </div>
             )}
           </div>
