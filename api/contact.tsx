@@ -19,6 +19,8 @@ interface ContactPayload {
   budget?: string;
   timeline?: string;
   message?: string;
+  privacyAccepted?: boolean;
+  marketingOptIn?: boolean;
 }
 
 const BUDGET_LABELS: Record<string, string> = {
@@ -79,6 +81,9 @@ export default async function handler(
       .status(400)
       .json({ error: "Name, email, and phone are required" });
   }
+  if (payload.privacyAccepted !== true) {
+    return res.status(400).json({ error: "Privacy Policy acceptance is required" });
+  }
   if (!isValidEmail(email)) {
     return res.status(400).json({ error: "Invalid email address" });
   }
@@ -87,6 +92,7 @@ export default async function handler(
   const budget = BUDGET_LABELS[budgetRaw] || (budgetRaw ? budgetRaw : undefined);
   const timeline =
     TIMELINE_LABELS[timelineRaw] || (timelineRaw ? timelineRaw : undefined);
+  const marketingOptIn = payload.marketingOptIn === true;
 
   const submittedAt = new Date().toLocaleString("en-US", {
     timeZone: "America/New_York",
@@ -142,6 +148,7 @@ export default async function handler(
         message,
         submittedAt,
         siteUrl: SITE_URL,
+        marketingOptIn,
       }),
     },
     { idempotencyKey: `contact-admin/${idempotencyBase}` },

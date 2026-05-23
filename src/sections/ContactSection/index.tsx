@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { heroFadeUp, heroStagger, fadeLeft, viewport } from "@/lib/motion";
 
@@ -41,6 +42,8 @@ export const ContactSection = () => {
   const [budget, setBudget] = useState("");
   const [timeline, setTimeline] = useState("");
   const [fields, setFields] = useState({ name: "", phone: "", email: "", message: "" });
+  const [privacyAccepted, setPrivacyAccepted] = useState(false);
+  const [marketingOptIn, setMarketingOptIn] = useState(false);
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -50,6 +53,10 @@ export const ContactSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (status === "submitting") return;
+    if (!privacyAccepted) {
+      setErrorMsg("Please agree to the Privacy Policy to continue.");
+      return;
+    }
     setStatus("submitting");
     setErrorMsg("");
 
@@ -65,6 +72,8 @@ export const ContactSection = () => {
           service,
           budget,
           timeline,
+          privacyAccepted,
+          marketingOptIn,
         }),
       });
 
@@ -78,6 +87,8 @@ export const ContactSection = () => {
       setService("");
       setBudget("");
       setTimeline("");
+      setPrivacyAccepted(false);
+      setMarketingOptIn(false);
     } catch (err) {
       setStatus("error");
       setErrorMsg(err instanceof Error ? err.message : "Something went wrong. Please try again.");
@@ -270,7 +281,37 @@ export const ContactSection = () => {
                 />
               </div>
 
-              <div className="flex flex-col gap-y-4">
+              <div className="flex flex-col gap-y-4 pt-2">
+                <label className="flex items-start gap-x-3 cursor-pointer group">
+                  <input
+                    type="checkbox"
+                    checked={privacyAccepted}
+                    onChange={(e) => setPrivacyAccepted(e.target.checked)}
+                    className="mt-1 h-4 w-4 shrink-0 accent-red-600"
+                    required
+                  />
+                  <span className="text-white/60 text-[13px] leading-[1.6] group-hover:text-white/80 transition-colors">
+                    I agree to the{" "}
+                    <Link to="/privacy" className="text-red-500 hover:text-red-400 underline underline-offset-2">
+                      Privacy Policy
+                    </Link>{" "}
+                    and authorize Faith Construction One to contact me about my project.
+                  </span>
+                </label>
+                <label className="flex items-start gap-x-3 cursor-pointer group">
+                  <input
+                    type="checkbox"
+                    checked={marketingOptIn}
+                    onChange={(e) => setMarketingOptIn(e.target.checked)}
+                    className="mt-1 h-4 w-4 shrink-0 accent-red-600"
+                  />
+                  <span className="text-white/60 text-[13px] leading-[1.6] group-hover:text-white/80 transition-colors">
+                    I&apos;d like to receive tips, updates, and promotions by email (optional).
+                  </span>
+                </label>
+              </div>
+
+              <motion.div className="flex flex-col gap-y-4">
                 <button
                   type="submit"
                   disabled={status === "submitting"}
@@ -303,7 +344,7 @@ export const ContactSection = () => {
                     {errorMsg || "Please try again or call us directly at (904) 555-0198."}
                   </div>
                 )}
-              </div>
+              </motion.div>
 
             </form>
           </motion.div>

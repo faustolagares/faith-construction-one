@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { FooterBrand } from "@/sections/Footer/components/FooterBrand";
 import { FooterLinksColumn } from "@/sections/Footer/components/FooterLinksColumn";
 import { FooterBottom } from "@/sections/Footer/components/FooterBottom";
+import { CookieSettingsButton } from "@/components/CookieConsent/CookieSettingsButton";
 import { fadeUp, staggerContainer, viewport } from "@/lib/motion";
 
 export const Footer = () => {
@@ -16,7 +17,7 @@ export const Footer = () => {
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1.6fr_1fr_1fr_1.2fr] gap-10 pb-10 md:gap-x-16 md:gap-y-16 md:pb-[60px]"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1.2fr] gap-10 pb-10 md:gap-x-12 md:gap-y-16 md:pb-[60px]"
         >
           <motion.div variants={fadeUp}><FooterBrand /></motion.div>
           <motion.div variants={fadeUp}>
@@ -34,12 +35,27 @@ export const Footer = () => {
             <FooterLinksColumn
               title="Company"
               items={[
-                { text: "About", href: "#" },
-                { text: "Projects", href: "#" },
-                { text: "Process", href: "#" },
-                { text: "Contact", href: "#" },
+                { text: "About", href: "/#about" },
+                { text: "Projects", href: "/#projects" },
+                { text: "Process", href: "/#process" },
+                { text: "Contact", href: "/contact" },
               ]}
             />
+          </motion.div>
+          <motion.div variants={fadeUp}>
+            <FooterLinksColumn
+              title="Legal"
+              items={[
+                { text: "Privacy Policy", href: "/privacy" },
+                { text: "Terms of Service", href: "/terms" },
+                { text: "Cookie Policy", href: "/cookies" },
+                { text: "Data Deletion", href: "/data-deletion" },
+                { text: "Do Not Sell", href: "/do-not-sell" },
+              ]}
+            />
+            <div className="mt-[22px]">
+              <CookieSettingsButton />
+            </div>
           </motion.div>
           <motion.div variants={fadeUp}>
             <FooterLinksColumn

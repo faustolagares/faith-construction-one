@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { ConsentProvider } from "@/context/ConsentContext";
+import { CookieConsent } from "@/components/CookieConsent";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -22,6 +24,11 @@ import { Footer } from "@/sections/Footer";
 import { ContactPage } from "@/pages/ContactPage";
 import { BlogPage } from "@/pages/BlogPage";
 import { PostPage } from "@/pages/PostPage";
+import { PrivacyPage } from "@/pages/PrivacyPage";
+import { TermsPage } from "@/pages/TermsPage";
+import { CookiesPage } from "@/pages/CookiesPage";
+import { DataDeletionPage } from "@/pages/DataDeletionPage";
+import { DoNotSellPage } from "@/pages/DoNotSellPage";
 
 const HomePage = () => (
   <div className="text-white text-base font-normal bg-gray-950 min-h-screen min-w-[320px] overflow-x-hidden font-space_grotesk">
@@ -41,14 +48,22 @@ const HomePage = () => (
 
 export const App = () => {
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/blog" element={<BlogPage />} />
-        <Route path="/blog/:slug" element={<PostPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-      </Routes>
-    </BrowserRouter>
+    <ConsentProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<PostPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/terms" element={<TermsPage />} />
+          <Route path="/cookies" element={<CookiesPage />} />
+          <Route path="/data-deletion" element={<DataDeletionPage />} />
+          <Route path="/do-not-sell" element={<DoNotSellPage />} />
+        </Routes>
+        <CookieConsent />
+      </BrowserRouter>
+    </ConsentProvider>
   );
 };

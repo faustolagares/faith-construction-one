@@ -22,6 +22,7 @@ interface AdminNotificationEmailProps {
   message?: string;
   submittedAt?: string;
   siteUrl?: string;
+  marketingOptIn?: boolean;
 }
 
 const SITE_URL = "https://www.faithconstructionone.com";
@@ -52,6 +53,7 @@ export default function AdminNotificationEmail({
   message,
   submittedAt,
   siteUrl = SITE_URL,
+  marketingOptIn,
 }: AdminNotificationEmailProps) {
   return (
     <Html lang="en">
@@ -263,6 +265,10 @@ export default function AdminNotificationEmail({
             <DetailRow label="Service" value={service} />
             <DetailRow label="Budget" value={budget} />
             <DetailRow label="Timeline" value={timeline} />
+            <DetailRow
+              label="Marketing"
+              value={marketingOptIn ? "Opted in" : "Not opted in"}
+            />
 
             {message ? (
               <>
