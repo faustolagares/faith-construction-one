@@ -20,9 +20,9 @@ export const HeroContent = () => {
         {/* Headline */}
         <motion.h1
           variants={heroFadeUp}
-          className="font-playfair_display font-medium text-[clamp(36px,8vw,80px)] tracking-[-0.88px] leading-[1.02] mb-5 md:mb-8 md:text-[80px] md:leading-[0.98] md:tracking-[-1.4px] md:whitespace-nowrap"
+          className="font-playfair_display font-medium text-balance max-w-full text-[clamp(32px,5.5vw,56px)] tracking-[-0.88px] leading-[1.08] mb-5 md:mb-8 md:tracking-[-1.1px] md:leading-[1.06]"
         >
-          Your Property<br />Fully Transformed
+          Contractor That Shows Up On Time and Stays Until the Job Is Done
           <span className="text-red-600">.</span>
         </motion.h1>
 
@@ -31,7 +31,7 @@ export const HeroContent = () => {
           variants={heroFadeUp}
           className="text-white/80 text-sm leading-[1.65] max-w-full mb-7 md:w-[471px] md:max-w-[471px] md:text-base md:mb-[42px]"
         >
-          Pavers, remodeling, outdoor living — one team handles it all. No subcontractors. No scope changes after you sign. No result that looks like a cheaper version of what you agreed to.
+          Paver driveways and patios, pool deck remodeling with travertine, and LVP flooring with a team that brings problems to your attention.
         </motion.p>
 
         {/* CTA buttons */}

@@ -25,6 +25,7 @@ const ScrollToTop = () => {
 import { Navbar } from "@/sections/Navbar";
 import { Hero } from "@/sections/Hero";
 import { TrustBar } from "@/sections/TrustBar";
+import { WhyChooseSection } from "@/sections/WhyChooseSection";
 import { ServicesSection } from "@/sections/ServicesSection";
 import { ServicesShowcaseSection } from "@/sections/ServicesShowcaseSection";
 import { ProjectsSection } from "@/sections/ProjectsSection";
@@ -47,6 +48,7 @@ const HomePage = () => (
     <Navbar />
     <Hero />
     <TrustBar />
+    <WhyChooseSection />
     <ServicesSection />
     <ServicesShowcaseSection />
     <ProjectsSection />
