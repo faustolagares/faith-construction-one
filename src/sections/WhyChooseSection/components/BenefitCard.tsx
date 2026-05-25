@@ -8,7 +8,7 @@ export const BenefitCard = ({ height, ...props }: BenefitCardProps) => {
   return (
     <article
       data-benefit-card
-      className="box-border flex w-[210px] shrink-0 flex-col gap-4 rounded-lg border border-stone-200 bg-white px-4 py-5 shadow-sm md:w-[252px] md:px-4"
+      className="box-border flex w-[210px] shrink-0 flex-col gap-4 border border-stone-200 border-solid bg-white px-4 py-5 md:w-[252px] md:px-4"
       style={height ? { height } : undefined}
     >
       <div>
@@ -18,7 +18,7 @@ export const BenefitCard = ({ height, ...props }: BenefitCardProps) => {
         <p className="text-[13px] leading-[22px] text-slate-900">{props.summary}</p>
       </div>
 
-      <div className="border-l-2 border-stone-200 pl-3.5">
+      <div className="border-l-2 border-red-600 pl-3.5">
         <p className="text-[13px] leading-[22px] text-slate-500">
           &ldquo;{props.quote}&rdquo;
         </p>
@@ -29,7 +29,7 @@ export const BenefitCard = ({ height, ...props }: BenefitCardProps) => {
           >
             {props.initial}
           </span>
-          <span className="text-sm text-slate-500">{props.reviewer}</span>
+          <span className="text-sm font-semibold text-slate-900">{props.reviewer}</span>
         </div>
       </div>
     </article>
