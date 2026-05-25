@@ -4,7 +4,6 @@ export type WhyChooseBenefit = {
   quote: string;
   reviewer: string;
   initial: string;
-  avatarColor: string;
 };
 
 export const whyChooseBenefits: WhyChooseBenefit[] = [
@@ -16,7 +15,6 @@ export const whyChooseBenefits: WhyChooseBenefit[] = [
       "Other companies gave me the run around for weeks and Faith Construction gave me a date, was there on that date, and finished in 2 days.",
     reviewer: "Doug",
     initial: "D",
-    avatarColor: "bg-violet-500",
   },
   {
     title: "Budget Adherence",
@@ -26,7 +24,6 @@ export const whyChooseBenefits: WhyChooseBenefit[] = [
       "They were there when they said they would be and completed the work on schedule and on budget. Couldn't be happier.",
     reviewer: "Damian Cook",
     initial: "D",
-    avatarColor: "bg-orange-500",
   },
   {
     title: "Quality Workmanship",
@@ -36,7 +33,6 @@ export const whyChooseBenefits: WhyChooseBenefit[] = [
       "Fantastic. Superb workmanship. Incredible remodel of sandstone deck and waterfall with travertine.",
     reviewer: "David Menke",
     initial: "D",
-    avatarColor: "bg-slate-600",
   },
   {
     title: "Honest Communication",
@@ -46,7 +42,6 @@ export const whyChooseBenefits: WhyChooseBenefit[] = [
       "They brought an issue to my attention instead of plowing ahead. I would definitely use them again.",
     reviewer: "Bill Garrison",
     initial: "B",
-    avatarColor: "bg-rose-400",
   },
   {
     title: "Family-Based Team",
@@ -56,6 +51,5 @@ export const whyChooseBenefits: WhyChooseBenefit[] = [
       "Family base company. They care about the job and about the customer. I'll use them again in the future.",
     reviewer: "Junio Fortuna",
     initial: "J",
-    avatarColor: "bg-purple-300",
   },
 ];

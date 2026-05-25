@@ -8,7 +8,7 @@ export const BenefitCard = ({ height, ...props }: BenefitCardProps) => {
   return (
     <article
       data-benefit-card
-      className="box-border flex w-[210px] shrink-0 flex-col gap-4 border border-stone-200 border-solid bg-white px-4 py-5 md:w-[252px] md:px-4"
+      className="box-border flex w-[242px] shrink-0 flex-col gap-4 border border-stone-200 border-solid bg-white px-4 py-5 md:w-[252px] md:px-4"
       style={height ? { height } : undefined}
     >
       <div>
@@ -24,7 +24,7 @@ export const BenefitCard = ({ height, ...props }: BenefitCardProps) => {
         </p>
         <div className="mt-3 flex items-center gap-3">
           <span
-            className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-sm font-semibold text-white ${props.avatarColor}`}
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-red-600 text-sm font-semibold text-white"
             aria-hidden="true"
           >
             {props.initial}
