@@ -1,24 +1,57 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { ProjectCard } from "@/sections/ProjectsSection/components/ProjectCard";
 import { ValuePoints } from "@/sections/ProjectsSection/components/ValuePoints";
 import { fadeUp, fadeLeft, staggerContainer, viewport } from "@/lib/motion";
+import { projects } from "@/data/projects";
 
-const projects = [
-  { category: "Kitchen Remodeling", title: "Riverside Kitchen", location: "Jacksonville, FL", imageUrl: "https://imagedelivery.net/O1Es2ZMHV0HF7g71pX5Prg/60dfc00b-a528-4285-ea4c-26c10f6c2500/public" },
-  { category: "Paver Driveway", title: "Coastal Driveway", location: "Ponte Vedra Beach, FL", imageUrl: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=70" },
-  { category: "Bathroom Remodeling", title: "Modern Oasis", location: "Fernandina Beach, FL", imageUrl: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=600&q=70" },
-  { category: "Outdoor Living", title: "Backyard Retreat", location: "St. Johns, FL", imageUrl: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=70" },
-  { category: "Interior Improvements", title: "Heritage Living Room", location: "Amelia Island, FL", imageUrl: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=70" },
-  { category: "Patio & Pool Deck", title: "Sunset Patio", location: "Atlantic Beach, FL", imageUrl: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=600&q=70" },
-];
+const AUTOPLAY_INTERVAL = 3500;
 
 export const ProjectsSection = () => {
   const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
   const trackRef = useRef<HTMLDivElement>(null);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const total = projects.length;
 
-  const prev = () => setCurrent((c) => (c - 1 + total) % total);
-  const next = () => setCurrent((c) => (c + 1) % total);
+  const scrollTo = useCallback((index: number) => {
+    const track = trackRef.current;
+    if (!track) return;
+    const card = track.children[index] as HTMLElement;
+    if (card) track.scrollTo({ left: card.offsetLeft, behavior: "smooth" });
+  }, []);
+
+  const prev = useCallback(() => {
+    setCurrent((c) => {
+      const next = (c - 1 + total) % total;
+      scrollTo(next);
+      return next;
+    });
+  }, [total, scrollTo]);
+
+  const next = useCallback(() => {
+    setCurrent((c) => {
+      const nextIdx = (c + 1) % total;
+      scrollTo(nextIdx);
+      return nextIdx;
+    });
+  }, [total, scrollTo]);
+
+  const resetInterval = useCallback(() => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
+      if (!paused) next();
+    }, AUTOPLAY_INTERVAL);
+  }, [paused, next]);
+
+  useEffect(() => {
+    resetInterval();
+    return () => { if (intervalRef.current) clearInterval(intervalRef.current); };
+  }, [paused, resetInterval]);
+
+  const handlePrev = () => { resetInterval(); prev(); };
+  const handleNext = () => { resetInterval(); next(); };
 
   return (
     <section id="projects" className="relative text-slate-900 bg-stone-100 overflow-hidden pt-14 pb-12 px-5 scroll-mt-28 md:pt-[100px] md:pb-20 md:px-8 lg:px-10">
@@ -45,9 +78,9 @@ export const ProjectsSection = () => {
             <p className="text-slate-600 text-sm leading-[24.5px] max-w-xs mb-9">
               Explore a selection of our completed projects. Each one is a reflection of our commitment to craftsmanship, detail, and client satisfaction.
             </p>
-            <button type="button" className="text-[11px] font-bold tracking-[2.42px] uppercase border-b border-red-600 pb-1.5 text-slate-900 hover:text-red-600 transition-colors">
+            <Link to="/projects" className="text-[11px] font-bold tracking-[2.42px] uppercase border-b border-red-600 pb-1.5 text-slate-900 hover:text-red-600 transition-colors">
               View All Projects
-            </button>
+            </Link>
           </motion.div>
 
           {/* Carousel */}
@@ -57,13 +90,15 @@ export const ProjectsSection = () => {
             whileInView="visible"
             viewport={viewport}
             className="relative overflow-visible md:overflow-hidden"
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
           >
             {/* Controls */}
             <div className="flex items-center justify-end gap-3.5 mb-[18px] md:absolute md:top-[-88px] md:right-0 md:gap-5 md:mb-0">
-              <button aria-label="Previous" onClick={prev} className="flex items-center justify-center h-9 w-9 md:h-10 md:w-10 border border-stone-300 rounded-full opacity-40 hover:opacity-70 transition-opacity">
+              <button aria-label="Previous" onClick={handlePrev} className="flex items-center justify-center h-9 w-9 md:h-10 md:w-10 border border-stone-300 rounded-full opacity-40 hover:opacity-70 transition-opacity">
                 <img src="https://c.animaapp.com/moprd4x8gGBWRx/assets/icon-19.svg" alt="" className="h-4 w-4" />
               </button>
-              <button aria-label="Next" onClick={next} className="flex items-center justify-center h-9 w-9 md:h-10 md:w-10 border border-red-600 rounded-full text-red-600 hover:bg-red-600/10 transition-colors">
+              <button aria-label="Next" onClick={handleNext} className="flex items-center justify-center h-9 w-9 md:h-10 md:w-10 border border-red-600 rounded-full text-red-600 hover:bg-red-600/10 transition-colors">
                 <img src="https://c.animaapp.com/moprd4x8gGBWRx/assets/icon-20.svg" alt="" className="h-4 w-4" />
               </button>
               <span className="text-stone-400 text-[13px] font-semibold tracking-[0.52px] ml-1">
@@ -73,28 +108,40 @@ export const ProjectsSection = () => {
               </span>
             </div>
 
-            {/* Scrollable card track */}
-            <div
-              ref={trackRef}
-              className="flex gap-x-5 overflow-x-auto overflow-y-hidden snap-x snap-mandatory scrollbar-hide pb-2 touch-pan-x overscroll-x-contain [-webkit-overflow-scrolling:touch]"
-              style={{ scrollbarWidth: "none" }}
-            >
-              {projects.map((p, i) => (
-                <article key={p.title} className="shrink-0 snap-start w-[78%] sm:w-[50%] md:w-[calc(25%-15px)]">
-                  <div
-                    className="aspect-[4/5] bg-stone-300 bg-cover bg-center w-full mb-[18px]"
-                    style={{ backgroundImage: `url('${p.imageUrl}')` }}
-                  />
-                  <span className="text-gray-500 text-[10px] font-bold tracking-[2px] uppercase inline-block mb-2.5 pt-2 border-t border-red-600">
-                    {p.category}
-                  </span>
-                  <h3 className="font-playfair_display text-[22px] font-medium leading-[26.4px] mb-2.5">{p.title}</h3>
-                  <div className="text-gray-500 text-xs flex items-center gap-x-2">
-                    <img src="https://c.animaapp.com/moprd4x8gGBWRx/assets/icon-21.svg" alt="" className="h-3 w-3" />
-                    {p.location}
-                  </div>
-                </article>
-              ))}
+            {/* Scrollable card track with side arrows */}
+            <div className="flex items-start gap-3">
+              {/* mt aligns arrow to vertical center of the aspect-[4/5] image */}
+              <button
+                onClick={handlePrev}
+                aria-label="Previous"
+                className={`shrink-0 mt-[120px] text-slate-400 hover:text-red-600 transition-colors ${current === 0 ? "invisible" : ""}`}
+              >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M10 13L5 8L10 3" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+
+              <div className="flex-1 overflow-x-hidden">
+                <div
+                  ref={trackRef}
+                  className="flex gap-x-5 overflow-x-auto overflow-y-hidden snap-x snap-mandatory scrollbar-hide pb-2 touch-pan-x overscroll-x-contain [-webkit-overflow-scrolling:touch]"
+                  style={{ scrollbarWidth: "none" }}
+                >
+                  {projects.map((p) => (
+                    <ProjectCard key={p.title} {...p} />
+                  ))}
+                </div>
+              </div>
+
+              <button
+                onClick={handleNext}
+                aria-label="Next"
+                className={`shrink-0 mt-[120px] text-slate-400 hover:text-red-600 transition-colors ${current === total - 1 ? "invisible" : ""}`}
+              >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M6 3L11 8L6 13" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
             </div>
           </motion.div>
         </div>

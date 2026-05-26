@@ -167,3 +167,67 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
+
+@layer components {
+  .project-card {
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .project-card:hover {
+    transform: translateY(-6px);
+  }
+
+  .project-card__image {
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .project-card:hover .project-card__image {
+    transform: scale(1.06);
+  }
+
+  .project-card__overlay {
+    background-color: transparent;
+    transition: background-color 0.45s ease;
+  }
+
+  .project-card:hover .project-card__overlay {
+    background-color: rgb(220 38 38 / 0.14);
+  }
+
+  .project-card:hover .project-card__title {
+    color: rgb(220 38 38);
+  }
+
+  .project-card__title {
+    transition: color 0.3s ease;
+  }
+
+  .benefit-card:hover {
+    border-color: rgb(220 38 38);
+    box-shadow: 0 14px 40px -14px rgb(220 38 38 / 0.35);
+  }
+
+  .benefit-card:hover .benefit-card__title {
+    color: rgb(220 38 38);
+  }
+
+  .benefit-card__title {
+    transition: color 0.3s ease;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-card__image,
+  .benefit-card {
+    transition: none !important;
+  }
+
+  .project-card:hover {
+    transform: none;
+  }
+
+  .project-card:hover .project-card__image {
+    transform: none;
+  }
+}

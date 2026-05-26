@@ -4,7 +4,7 @@ export const DesktopMenu = () => {
       {[
         { href: "/", label: "HOME" },
         { href: "#services", label: "SERVICES" },
-        { href: "#projects", label: "PROJECTS" },
+        { href: "/projects", label: "PROJECTS" },
         { href: "#about", label: "ABOUT" },
         { href: "/blog", label: "BLOG" },
         { href: "/contact", label: "CONTACT" },

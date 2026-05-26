@@ -42,6 +42,7 @@ import { TermsPage } from "@/pages/TermsPage";
 import { CookiesPage } from "@/pages/CookiesPage";
 import { DataDeletionPage } from "@/pages/DataDeletionPage";
 import { DoNotSellPage } from "@/pages/DoNotSellPage";
+import { ProjectsPage } from "@/pages/ProjectsPage";
 
 const HomePage = () => (
   <div className="text-white text-base font-normal bg-gray-950 min-h-screen min-w-[320px] overflow-x-hidden font-space_grotesk">
@@ -67,6 +68,7 @@ export const App = () => {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<PostPage />} />
           <Route path="/contact" element={<ContactPage />} />
