@@ -4,6 +4,7 @@ import { WasteHero } from "@/sections/WasteSolutions/WasteHero";
 import { WasteTrustBar } from "@/sections/WasteSolutions/WasteTrustBar";
 import { WastePricing } from "@/sections/WasteSolutions/WastePricing";
 import { WasteShowcase } from "@/sections/WasteSolutions/WasteShowcase";
+import { WasteDeliveryBand } from "@/sections/WasteSolutions/WasteDeliveryBand";
 import { WastePerfectFor } from "@/sections/WasteSolutions/WastePerfectFor";
 import { WasteFees } from "@/sections/WasteSolutions/WasteFees";
 import { WasteProcess } from "@/sections/WasteSolutions/WasteProcess";
@@ -20,6 +21,7 @@ export const WasteSolutionsPage = () => {
         <WasteTrustBar />
       </section>
       <WasteShowcase />
+      <WasteDeliveryBand />
       <WastePerfectFor />
       <WasteProcess />
       <WasteServiceArea />
