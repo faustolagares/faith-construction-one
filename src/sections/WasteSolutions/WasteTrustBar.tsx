@@ -35,11 +35,12 @@ const SEALS = [
 // standalone section below the hero on mobile — call sites add the wrapper.
 export const WasteTrustBar = () => {
   return (
+    <div className="px-5 md:px-8 lg:px-10">
     <motion.div
       variants={staggerContainer}
       initial="hidden"
       animate="visible"
-      className="mx-auto grid w-full max-w-[1440px] grid-cols-1 px-5 py-2 md:grid-cols-4 md:px-8 md:py-6 lg:px-10"
+      className="mx-auto grid w-full max-w-[1440px] grid-cols-1 py-2 md:grid-cols-4 md:py-6"
     >
       {SEALS.map((seal) => {
         const Icon = seal.icon;
@@ -62,5 +63,6 @@ export const WasteTrustBar = () => {
         );
       })}
     </motion.div>
+    </div>
   );
 };

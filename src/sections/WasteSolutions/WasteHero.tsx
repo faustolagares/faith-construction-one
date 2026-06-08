@@ -25,13 +25,16 @@ export const WasteHero = () => {
       {/* Red glow accent */}
       <div className="absolute inset-0 z-[1] pointer-events-none bg-[radial-gradient(circle_at_10%_20%,rgba(204,31,45,0.14)_0%,rgba(15,23,42,0)_38%)]" />
 
-      {/* Main hero content — bottom-anchored on mobile, centered on desktop */}
-      <motion.div
-        variants={heroStagger}
-        initial="hidden"
-        animate="visible"
-        className="relative z-10 mx-auto flex w-full max-w-[1440px] flex-1 flex-col justify-end px-5 pt-14 pb-12 md:justify-center md:px-8 md:py-0 lg:px-10"
-      >
+      {/* Main hero content — bottom-anchored on mobile, centered on desktop.
+          Padding lives on the full-bleed wrapper; max-w on the inner element
+          (matches the home sections so content aligns at every width). */}
+      <div className="relative z-10 flex flex-1 flex-col justify-end px-5 pt-14 pb-12 md:justify-center md:px-8 md:py-0 lg:px-10">
+        <motion.div
+          variants={heroStagger}
+          initial="hidden"
+          animate="visible"
+          className="mx-auto w-full max-w-[1440px]"
+        >
         <div className="max-w-full md:max-w-[640px]">
           <motion.div
             variants={heroFadeUp}
@@ -76,7 +79,8 @@ export const WasteHero = () => {
             </span>
           </motion.div>
         </div>
-      </motion.div>
+        </motion.div>
+      </div>
 
       {/* Trust seals — part of the hero on desktop only (mobile gets its own section below) */}
       <div className="relative z-10 hidden md:block border-t border-white/10 bg-gray-950/55">
