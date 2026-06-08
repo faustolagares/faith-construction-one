@@ -1,3 +1,5 @@
+"use client";
+
 import { CtaContent } from "@/sections/CtaSection/components/CtaContent";
 import { StatsBar } from "@/sections/CtaSection/components/StatsBar";
 

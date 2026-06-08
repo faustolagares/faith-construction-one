@@ -1,3 +1,5 @@
+"use client";
+
 import { useConsentOptional } from "@/context/ConsentContext";
 
 export const CookieSettingsButton = ({

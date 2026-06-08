@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { MapDisplay } from "@/sections/ServiceAreaSection/components/MapDisplay";
 import { AreaFeatures } from "@/sections/ServiceAreaSection/components/AreaFeatures";

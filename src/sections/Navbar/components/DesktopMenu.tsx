@@ -3,7 +3,8 @@ export const DesktopMenu = () => {
     <div className="hidden md:flex items-center gap-x-8 lg:gap-x-11">
       {[
         { href: "/", label: "HOME" },
-        { href: "#services", label: "SERVICES" },
+        { href: "#services", label: "CONSTRUCTION" },
+        { href: "/waste-solutions", label: "WASTE SOLUTIONS" },
         { href: "/projects", label: "PROJECTS" },
         { href: "#about", label: "ABOUT" },
         { href: "/blog", label: "BLOG" },

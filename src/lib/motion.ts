@@ -2,19 +2,23 @@ import type { Variants } from "framer-motion";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-// Section scroll animations — used with whileInView
+// SSR-safe reveals: the "hidden" state stays fully OPAQUE so server-rendered
+// HTML is visible to crawlers and to users without JS. The animation is a
+// progressive enhancement — a subtle slide that plays on the client only.
+// (Previously hidden used opacity:0, which left content invisible in SSR HTML.)
+
 export const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 1, y: 24 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease } },
 };
 
 export const fadeIn: Variants = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 1 },
   visible: { opacity: 1, transition: { duration: 0.5, ease } },
 };
 
 export const fadeLeft: Variants = {
-  hidden: { opacity: 0, x: -24 },
+  hidden: { opacity: 1, x: -24 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease } },
 };
 
@@ -36,13 +40,13 @@ export const staggerAfterHeading: Variants = {
 
 // Para CTAs/elementos que entram depois de uma lista staggered
 export const fadeUpDelayed: Variants = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 1, y: 24 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease, delay: 0.85 } },
 };
 
 // Hero animations — slower, more deliberate, editorial feel
 export const heroFadeUp: Variants = {
-  hidden: { opacity: 0, y: 14 },
+  hidden: { opacity: 1, y: 14 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.9, ease } },
 };
 

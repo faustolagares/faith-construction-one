@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { FeatureItem } from "@/components/FeatureItem";
 import { fadeUp, staggerContainer, viewport } from "@/lib/motion";

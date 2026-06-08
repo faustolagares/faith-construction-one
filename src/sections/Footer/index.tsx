@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { FooterBrand } from "@/sections/Footer/components/FooterBrand";
 import { FooterLinksColumn } from "@/sections/Footer/components/FooterLinksColumn";
@@ -32,6 +34,7 @@ export const Footer = () => {
                 { text: "Bathroom Remodeling", href: "/#bathroom" },
                 { text: "Interior Improvements", href: "/#interior" },
                 { text: "Outdoor Living", href: "/#outdoor" },
+                { text: "Dumpster Rentals", href: "/waste-solutions" },
               ]}
             />
           </motion.div>

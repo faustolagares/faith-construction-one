@@ -1,6 +1,10 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { fadeUp, staggerContainer, viewport } from "@/lib/motion";
+import { ArrowButton } from "@/sections/WasteSolutions/components/ArrowButton";
+import { WASTE_SCHEDULE_PATH } from "@/sections/WasteSolutions/data";
 
 const featuredFeatures = [
   { label: "Driveways", iconSrc: "https://c.animaapp.com/moprd4x8gGBWRx/assets/icon-13.svg" },
@@ -176,6 +180,46 @@ export const ServicesShowcaseSection = () => {
               </div>
             </motion.article>
           ))}
+        </motion.div>
+
+        {/* Waste Solutions — a vertical of Faith */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          className="group relative mt-4 grid grid-cols-1 overflow-hidden border border-white/10 md:mt-5 md:grid-cols-[0.92fr_1.45fr]"
+        >
+          <div className="relative z-[2] flex flex-col justify-center bg-gray-950 px-6 py-9 md:px-9 md:py-14">
+            <div className="text-red-600 text-[11px] font-bold tracking-[2.2px] uppercase mb-6">
+              Faith Waste Solutions
+              <span className="block h-px w-10 bg-red-600 mt-4" />
+            </div>
+            <h3 className="font-playfair_display text-[32px] leading-[1.04] font-medium mb-4 md:text-[46px]">
+              Dumpster Rentals
+            </h3>
+            <p className="text-white/72 text-sm leading-[24.5px] max-w-[400px] mb-8">
+              Need to haul it all away? Faith Waste Solutions delivers 16-yard
+              dumpsters for cleanouts, remodels, construction, and demolition
+              debris across Northeast Florida.
+            </p>
+            <div className="flex flex-col gap-3.5 sm:flex-row sm:items-center md:gap-4">
+              <ArrowButton href="/waste-solutions" variant="primary">
+                Explore Waste Solutions
+              </ArrowButton>
+              <ArrowButton href={WASTE_SCHEDULE_PATH} variant="secondary">
+                Book a Dumpster
+              </ArrowButton>
+            </div>
+          </div>
+          <div className="relative aspect-[16/10] overflow-hidden bg-gray-900 md:aspect-auto md:min-h-[540px]">
+            <div
+              className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+              style={{ backgroundImage: "url('/assets/waste/dumpster-hero.webp')" }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-950/60 via-transparent to-transparent md:from-gray-950 md:via-gray-950/10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-950/45 via-transparent to-transparent" />
+          </div>
         </motion.div>
       </div>
     </section>

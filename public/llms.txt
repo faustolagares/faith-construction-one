@@ -1,0 +1,42 @@
+# Faith Construction One
+
+> Faith Construction One is a licensed, insured, family-based construction and
+> remodeling company serving Jacksonville and Northeast Florida, with 500+
+> projects completed and a 5.0 rating. It also operates Faith Waste Solutions,
+> a dumpster rental vertical.
+
+## Company
+- Name: Faith Construction One
+- Location: 10777 Scott Mill Rd, Jacksonville, FL 32223
+- Service area: Jacksonville and Northeast Florida (Ponte Vedra Beach,
+  Fernandina Beach, St. Johns, Amelia Island, Atlantic/Neptune/Jacksonville Beach)
+- Email: hello@faithconstructionone.com
+- Website: https://www.faithconstructionone.com
+
+## Construction & Remodeling
+- Paver installation (driveways, patios, walkways, pool decks)
+- Kitchen remodeling
+- Bathroom remodeling
+- Interior improvements / LVP flooring
+- Outdoor living (travertine pool decks, artificial turf)
+- Pages: /, /projects, /contact
+
+## Faith Waste Solutions — Dumpster Rentals
+- One 16-yard roll-off dumpster for cleanouts, remodels, construction, and
+  demolition debris. Same-day delivery available.
+- Pricing: Daily $250 (includes 1 ton disposal), Weekly $360, Monthly $450.
+- Add-ons: $80/ton over the included weight, $30/extra day. Delivery free within
+  30 miles of ZIP 32223; quoted beyond.
+- Booking page (coming soon): /waste-solutions/schedule
+- Page: /waste-solutions
+
+## Blog
+- Field notes on remodeling, costs, and construction in Northeast Florida.
+- Page: /blog
+
+## Key links
+- Home: https://www.faithconstructionone.com/
+- Dumpster Rentals: https://www.faithconstructionone.com/waste-solutions
+- Projects: https://www.faithconstructionone.com/projects
+- Blog: https://www.faithconstructionone.com/blog
+- Contact: https://www.faithconstructionone.com/contact

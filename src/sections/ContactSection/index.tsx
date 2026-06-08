@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -25,13 +27,13 @@ const TIMELINES = [
   { label: "Just planning", value: "planning" },
 ];
 
-const inputCls = "bg-white/5 border border-white/10 text-white text-[14px] px-4 py-3.5 placeholder:text-white/20 focus:outline-none focus:border-red-600 transition-colors w-full";
-const labelCls = "block text-[11px] font-bold tracking-[2px] uppercase text-white/40 mb-2";
+const inputCls = "bg-white border border-stone-300 text-slate-900 text-[14px] px-4 py-3.5 placeholder:text-slate-400 focus:outline-none focus:border-red-600 transition-colors w-full";
+const labelCls = "block text-[11px] font-bold tracking-[2px] uppercase text-slate-900/50 mb-2";
 
 const SectionLabel = ({ children }: { children: React.ReactNode }) => (
   <div className="flex items-center gap-x-4 mb-5">
-    <span className="text-[11px] font-bold tracking-[2.2px] uppercase text-white/30">{children}</span>
-    <span className="flex-1 h-px bg-white/8" />
+    <span className="text-[11px] font-bold tracking-[2.2px] uppercase text-slate-900/40">{children}</span>
+    <span className="flex-1 h-px bg-stone-300" />
   </div>
 );
 
@@ -96,7 +98,7 @@ export const ContactSection = () => {
   };
 
   return (
-    <section className="relative bg-gray-950 overflow-hidden pt-16 pb-16 px-5 md:pt-[120px] md:pb-[120px] md:px-8 lg:px-10">
+    <section className="relative bg-stone-100 text-slate-900 overflow-hidden pt-16 pb-16 px-5 border-t border-stone-200 md:pt-[120px] md:pb-[120px] md:px-8 lg:px-10">
       <div className="mx-auto w-full max-w-[1440px]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 lg:gap-32">
 
@@ -109,7 +111,7 @@ export const ContactSection = () => {
               <h1 className="font-playfair_display font-medium text-[36px] tracking-[-0.72px] leading-[38px] mb-6 md:text-[60px] md:tracking-[-1.2px] md:leading-[63px]">
                 Let's Talk About<br />Your Project<span className="text-red-600">.</span>
               </h1>
-              <p className="text-white/60 text-[15px] leading-[26px] max-w-[400px] mb-12">
+              <p className="text-slate-900/60 text-[15px] leading-[26px] max-w-[400px] mb-12">
                 Fill out the form and we'll come back with a straight answer — no vague estimates, no runaround.
               </p>
             </motion.div>
@@ -121,8 +123,8 @@ export const ContactSection = () => {
                   <polyline points="22,6 12,13 2,6" />
                 </svg>
                 <div>
-                  <div className="text-[11px] font-bold tracking-[2px] uppercase text-white/30 mb-1">Email</div>
-                  <a href="mailto:hello@faithconstructionone.com" className="text-white text-[15px] font-medium hover:text-red-500 transition-colors">hello@faithconstructionone.com</a>
+                  <div className="text-[11px] font-bold tracking-[2px] uppercase text-slate-900/45 mb-1">Email</div>
+                  <a href="mailto:hello@faithconstructionone.com" className="text-slate-900 text-[15px] font-medium hover:text-red-600 transition-colors">hello@faithconstructionone.com</a>
                 </div>
               </div>
               <div className="flex items-start gap-x-4">
@@ -131,8 +133,8 @@ export const ContactSection = () => {
                   <circle cx="12" cy="10" r="3" />
                 </svg>
                 <div>
-                  <div className="text-[11px] font-bold tracking-[2px] uppercase text-white/30 mb-1">Address</div>
-                  <span className="text-white text-[15px] font-medium">
+                  <div className="text-[11px] font-bold tracking-[2px] uppercase text-slate-900/45 mb-1">Address</div>
+                  <span className="text-slate-900 text-[15px] font-medium">
                     10777 Scott Mill Rd,
                     <br />
                     Jacksonville, FL 32223
@@ -141,21 +143,21 @@ export const ContactSection = () => {
               </div>
             </motion.div>
 
-            <motion.div variants={heroFadeUp} className="mt-12 pt-10 border-t border-white/10">
+            <motion.div variants={heroFadeUp} className="mt-12 pt-10 border-t border-stone-200">
               <div className="flex items-center gap-x-6">
                 <div>
                   <div className="text-red-600 font-playfair_display text-[28px] font-medium leading-none">500+</div>
-                  <div className="text-white/40 text-[11px] tracking-[1.5px] uppercase mt-1">Projects</div>
+                  <div className="text-slate-900/45 text-[11px] tracking-[1.5px] uppercase mt-1">Projects</div>
                 </div>
-                <div className="w-px h-10 bg-white/10" />
+                <div className="w-px h-10 bg-stone-300" />
                 <div>
                   <div className="text-red-600 font-playfair_display text-[28px] font-medium leading-none">5.0</div>
-                  <div className="text-white/40 text-[11px] tracking-[1.5px] uppercase mt-1">Rating</div>
+                  <div className="text-slate-900/45 text-[11px] tracking-[1.5px] uppercase mt-1">Rating</div>
                 </div>
-                <div className="w-px h-10 bg-white/10" />
+                <div className="w-px h-10 bg-stone-300" />
                 <div>
                   <div className="text-red-600 font-playfair_display text-[28px] font-medium leading-none">10+</div>
-                  <div className="text-white/40 text-[11px] tracking-[1.5px] uppercase mt-1">Years</div>
+                  <div className="text-slate-900/45 text-[11px] tracking-[1.5px] uppercase mt-1">Years</div>
                 </div>
               </div>
             </motion.div>
@@ -198,7 +200,7 @@ export const ContactSection = () => {
                         className={`flex items-center justify-between w-full text-left text-[14px] px-4 py-3.5 border transition-colors ${
                           active
                             ? "bg-red-600 border-red-600 text-white"
-                            : "bg-white/5 border-white/10 text-white/60 hover:text-white hover:border-white/25"
+                            : "bg-white border-stone-300 text-slate-900/70 hover:text-slate-900 hover:border-slate-400"
                         }`}
                       >
                         <span>{s}</span>
@@ -228,7 +230,7 @@ export const ContactSection = () => {
                           className={`w-full text-left text-[13px] px-4 py-3 border transition-colors ${
                             active
                               ? "bg-red-600 border-red-600 text-white"
-                              : "bg-white/5 border-white/10 text-white/60 hover:text-white hover:border-white/25"
+                              : "bg-white border-stone-300 text-slate-900/70 hover:text-slate-900 hover:border-slate-400"
                           }`}
                         >
                           {b.label}
@@ -250,7 +252,7 @@ export const ContactSection = () => {
                           className={`w-full text-left text-[13px] px-4 py-3 border transition-colors ${
                             active
                               ? "bg-red-600 border-red-600 text-white"
-                              : "bg-white/5 border-white/10 text-white/60 hover:text-white hover:border-white/25"
+                              : "bg-white border-stone-300 text-slate-900/70 hover:text-slate-900 hover:border-slate-400"
                           }`}
                         >
                           {t.label}
@@ -281,9 +283,9 @@ export const ContactSection = () => {
                     className="mt-1 h-4 w-4 shrink-0 accent-red-600"
                     required
                   />
-                  <span className="text-white/60 text-[13px] leading-[1.6] group-hover:text-white/80 transition-colors">
+                  <span className="text-slate-900/65 text-[13px] leading-[1.6] group-hover:text-slate-900 transition-colors">
                     I agree to the{" "}
-                    <Link to="/privacy" className="text-red-500 hover:text-red-400 underline underline-offset-2">
+                    <Link to="/privacy" className="text-red-600 hover:text-red-500 underline underline-offset-2">
                       Privacy Policy
                     </Link>{" "}
                     and authorize Faith Construction One to contact me about my project.
@@ -296,7 +298,7 @@ export const ContactSection = () => {
                     onChange={(e) => setMarketingOptIn(e.target.checked)}
                     className="mt-1 h-4 w-4 shrink-0 accent-red-600"
                   />
-                  <span className="text-white/60 text-[13px] leading-[1.6] group-hover:text-white/80 transition-colors">
+                  <span className="text-slate-900/65 text-[13px] leading-[1.6] group-hover:text-slate-900 transition-colors">
                     I&apos;d like to receive tips, updates, and promotions by email (optional).
                   </span>
                 </label>
@@ -315,9 +317,9 @@ export const ContactSection = () => {
                 {status === "success" && (
                   <div
                     role="status"
-                    className="border-l-2 border-red-600 bg-white/5 px-4 py-3 text-[13px] leading-[20px] text-white/80"
+                    className="border-l-2 border-red-600 bg-white px-4 py-3 text-[13px] leading-[20px] text-slate-900/80"
                   >
-                    <span className="block text-[10px] font-bold tracking-[1.8px] uppercase text-red-500 mb-1">
+                    <span className="block text-[10px] font-bold tracking-[1.8px] uppercase text-red-600 mb-1">
                       Request received
                     </span>
                     Thanks — check your inbox for a confirmation. We'll be in touch within a few hours.
@@ -327,9 +329,9 @@ export const ContactSection = () => {
                 {status === "error" && (
                   <div
                     role="alert"
-                    className="border-l-2 border-red-600 bg-red-600/10 px-4 py-3 text-[13px] leading-[20px] text-white/80"
+                    className="border-l-2 border-red-600 bg-red-600/10 px-4 py-3 text-[13px] leading-[20px] text-slate-900/80"
                   >
-                    <span className="block text-[10px] font-bold tracking-[1.8px] uppercase text-red-500 mb-1">
+                    <span className="block text-[10px] font-bold tracking-[1.8px] uppercase text-red-600 mb-1">
                       Something went wrong
                     </span>
                     {errorMsg || "Please try again or email us at hello@faithconstructionone.com."}

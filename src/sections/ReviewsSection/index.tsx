@@ -1,3 +1,5 @@
+"use client";
+
 import { SectionHeader } from "@/components/SectionHeader";
 import { TestimonialList } from "@/sections/ReviewsSection/components/TestimonialList";
 import { ReviewLink } from "@/sections/ReviewsSection/components/ReviewLink";

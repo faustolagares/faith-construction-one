@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { HeroContent } from "@/sections/Hero/components/HeroContent";
 import { HeroServiceTags } from "@/sections/Hero/components/HeroServiceTags";
@@ -42,7 +44,7 @@ export const Hero = () => {
       <div className="absolute inset-0 z-[0]">
         <div
           className="absolute inset-0 bg-no-repeat [background-position:center_top] [background-size:145%_auto] md:bg-cover md:bg-center"
-          style={{ backgroundImage: "url('/assets/hero-house-only.png')" }}
+          style={{ backgroundImage: "url('/assets/hero-house-only.webp')" }}
         />
         {/* Mobile image fade only at the bottom edge */}
         <div className="absolute left-0 right-0 top-[66vw] h-[42vw] bg-gradient-to-b from-transparent via-slate-900/65 to-slate-900 md:hidden" />

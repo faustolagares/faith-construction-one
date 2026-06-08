@@ -56,8 +56,8 @@ module.exports = {
           '"Segoe UI Symbol"',
           '"Noto Color Emoji"',
         ],
-        "playfair_display": ["Playfair Display", "ui-sans-serif", "system-ui", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
-        "space_grotesk": ["Space Grotesk", "ui-sans-serif", "system-ui", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"]
+        "playfair_display": ["var(--font-playfair)", "Playfair Display", "ui-serif", "Georgia", "serif"],
+        "space_grotesk": ["var(--font-space-grotesk)", "Space Grotesk", "ui-sans-serif", "system-ui", "sans-serif"]
       },
       keyframes: {
         "accordion-down": {

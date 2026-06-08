@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { ProcessHeader } from "@/sections/ProcessSection/components/ProcessHeader";
 import { viewport } from "@/lib/motion";

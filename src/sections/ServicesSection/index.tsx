@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { HighlightCard } from "@/sections/ServicesSection/components/HighlightCard";
 import { fadeUp, fadeLeft, staggerContainer, viewport } from "@/lib/motion";

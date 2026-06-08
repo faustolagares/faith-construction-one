@@ -1,15 +1,22 @@
+"use client";
+
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { NavbarLogo } from "@/sections/Navbar/components/NavbarLogo";
 import { DesktopMenu } from "@/sections/Navbar/components/DesktopMenu";
 import { PrimaryButton } from "@/components/PrimaryButton";
+import { WASTE_SCHEDULE_PATH } from "@/sections/WasteSolutions/data";
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { pathname } = useLocation();
+  const isWaste = pathname.startsWith("/waste-solutions");
 
   const navLinks = [
     { href: "/", label: "HOME" },
-    { href: "#services", label: "SERVICES" },
+    { href: "#services", label: "CONSTRUCTION" },
+    { href: "/waste-solutions", label: "WASTE SOLUTIONS" },
     { href: "/projects", label: "PROJECTS" },
     { href: "#about", label: "ABOUT" },
     { href: "/blog", label: "BLOG" },
@@ -69,12 +76,22 @@ export const Navbar = () => {
               {link.label}
             </a>
           ))}
-          <button
-            className="text-[11px] font-bold bg-red-600 tracking-[1.98px] text-center mt-3.5 px-[18px] py-3.5 hover:bg-red-700"
-            onClick={() => setMenuOpen(false)}
-          >
-            START YOUR PROJECT
-          </button>
+          {isWaste ? (
+            <a
+              href={WASTE_SCHEDULE_PATH}
+              className="text-[11px] font-bold bg-red-600 tracking-[1.98px] text-center mt-3.5 px-[18px] py-3.5 hover:bg-red-700"
+              onClick={() => setMenuOpen(false)}
+            >
+              BOOK A DUMPSTER
+            </a>
+          ) : (
+            <button
+              className="text-[11px] font-bold bg-red-600 tracking-[1.98px] text-center mt-3.5 px-[18px] py-3.5 hover:bg-red-700"
+              onClick={() => setMenuOpen(false)}
+            >
+              START YOUR PROJECT
+            </button>
+          )}
           </div>
         </motion.div>
       )}
