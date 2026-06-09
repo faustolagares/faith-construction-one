@@ -46,7 +46,7 @@ export const WasteShowcase = () => {
                 </h2>
                 <p className="text-slate-900/70 text-sm leading-[24.5px] max-w-[400px]">
                   Big enough for a full remodel or demolition haul. Small enough
-                  to fit a standard driveway. You fill it — we do the heavy
+                  to fit a standard driveway. You fill it, we do the heavy
                   lifting on both ends.
                 </p>
               </div>

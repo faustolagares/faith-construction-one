@@ -6,7 +6,7 @@ export const DesktopMenu = () => {
         { href: "#services", label: "CONSTRUCTION" },
         { href: "/waste-solutions", label: "WASTE SOLUTIONS" },
         { href: "/projects", label: "PROJECTS" },
-        { href: "#about", label: "ABOUT" },
+        { href: "/about", label: "ABOUT" },
         { href: "/blog", label: "BLOG" },
         { href: "/contact", label: "CONTACT" },
       ].map((link) => (

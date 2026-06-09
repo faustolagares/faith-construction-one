@@ -30,10 +30,11 @@ export const Footer = () => {
             <FooterLinksColumn
               title="Services"
               items={[
-                { text: "Kitchen Remodeling", href: "/#kitchen" },
-                { text: "Bathroom Remodeling", href: "/#bathroom" },
-                { text: "Interior Improvements", href: "/#interior" },
-                { text: "Outdoor Living", href: "/#outdoor" },
+                { text: "Paver Installation", href: "/services/paver-installation" },
+                { text: "Kitchen Remodeling", href: "/services/kitchen-remodeling" },
+                { text: "Bathroom Remodeling", href: "/services/bathroom-remodeling" },
+                { text: "Outdoor Living", href: "/services/outdoor-living" },
+                { text: "Interior Improvements", href: "/services/interior-improvements" },
                 { text: "Dumpster Rentals", href: "/waste-solutions" },
               ]}
             />
@@ -42,8 +43,8 @@ export const Footer = () => {
             <FooterLinksColumn
               title="Company"
               items={[
-                { text: "About", href: "/#about" },
-                { text: "Projects", href: "/#projects" },
+                { text: "About", href: "/about" },
+                { text: "Projects", href: "/projects" },
                 { text: "Blog", href: "/blog" },
                 { text: "Contact", href: "/contact" },
               ]}

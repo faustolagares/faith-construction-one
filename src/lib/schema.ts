@@ -50,15 +50,21 @@ export function localBusinessSchema() {
     "@id": `${SITE_URL}/#localbusiness`,
     name: "Faith Construction One",
     description:
-      "Licensed, insured construction & remodeling company in Jacksonville, FL — pavers, kitchen & bathroom remodeling, outdoor living, and LVP flooring.",
+      "Licensed, insured construction and remodeling company in Jacksonville, FL. Pavers, kitchen and bathroom remodeling, outdoor living, and LVP flooring.",
     url: SITE_URL,
     image: `${SITE_URL}/assets/hero-house-only.webp`,
     logo: `${SITE_URL}/assets/logo-white.png`,
     telephone: PHONE,
     address: POSTAL_ADDRESS,
     areaServed: AREA_SERVED,
+    foundingDate: "2015-01-20",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      reviewCount: "15",
+    },
     parentOrganization: { "@id": ORG_ID },
-    // TODO(inputs): openingHoursSpecification, aggregateRating, sameAs.
+    // TODO(inputs): openingHoursSpecification, sameAs (social profiles), license #.
   };
 }
 
@@ -66,7 +72,7 @@ export function wasteServiceSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Dumpster Rental — 16-Yard Roll-Off",
+    name: "Dumpster Rental, 16-Yard Roll-Off",
     serviceType: "Dumpster rental",
     provider: {
       "@type": "Organization",
@@ -106,6 +112,23 @@ export function blogPostingSchema(post: {
       ? { "@type": "Person", name: post.authorName }
       : { "@id": ORG_ID },
     publisher: { "@id": ORG_ID },
+  };
+}
+
+export function constructionServiceSchema(s: {
+  name: string;
+  slug: string;
+  description: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: s.name,
+    serviceType: s.name,
+    description: s.description,
+    url: `${SITE_URL}/services/${s.slug}`,
+    provider: { "@id": ORG_ID },
+    areaServed: AREA_SERVED,
   };
 }
 

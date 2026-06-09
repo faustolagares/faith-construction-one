@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ShieldCheck } from "lucide-react";
 import { fadeUp, fadeLeft, staggerContainer, viewport } from "@/lib/motion";
 import { ArrowButton } from "@/sections/WasteSolutions/components/ArrowButton";
 import { WASTE_SCHEDULE_PATH } from "@/sections/WasteSolutions/data";
@@ -49,6 +50,17 @@ export const WasteCta = () => {
               Same-day delivery across Jacksonville &amp; Northeast Florida.
               Reserve in under a minute.
             </p>
+            <div className="mb-8 flex items-start gap-x-3.5 border-l-2 border-red-600 pl-4 py-1">
+              <ShieldCheck className="h-7 w-7 shrink-0 text-red-500" strokeWidth={1.5} />
+              <div>
+                <div className="text-[12px] font-bold tracking-[1.8px] uppercase">
+                  Same-Day Delivery Guarantee
+                </div>
+                <p className="mt-1 text-white/65 text-[13.5px] leading-[19px]">
+                  Order by noon and your dumpster is on-site today.
+                </p>
+              </div>
+            </div>
             <div className="flex flex-col gap-3.5 sm:flex-row sm:items-center md:gap-4">
               <ArrowButton href={WASTE_SCHEDULE_PATH} variant="primary">
                 Book Your Dumpster

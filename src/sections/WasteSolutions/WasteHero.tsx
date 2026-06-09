@@ -58,7 +58,7 @@ export const WasteHero = () => {
             className="mt-6 text-white/80 text-base leading-[26px] max-w-[520px] md:text-lg md:leading-[30px]"
           >
             One 16-yard dumpster, dropped at your door the same day. Fill it on
-            your schedule — we haul it all away and cover the dump fees. No permits
+            your schedule. We haul it all away and cover the dump fees. No permits
             to chase, no carloads to the landfill, no hidden charges.
           </motion.p>
 
