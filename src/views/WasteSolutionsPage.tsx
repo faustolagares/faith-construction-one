@@ -17,7 +17,7 @@ export const WasteSolutionsPage = () => {
       <Navbar />
       <WasteHero />
       {/* Seals as their own section on mobile (inside the hero on desktop) */}
-      <section className="relative z-[5] md:hidden bg-gray-950 border-b border-white/10">
+      <section className="relative z-[5] md:hidden bg-[#0a1628] border-b border-white/10">
         <WasteTrustBar />
       </section>
       <WasteShowcase />

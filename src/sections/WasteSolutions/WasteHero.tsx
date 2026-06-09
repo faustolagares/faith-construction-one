@@ -16,10 +16,10 @@ export const WasteHero = () => {
           className="absolute inset-0 bg-cover bg-top md:bg-center md:[background-position:right_center]"
           style={{ backgroundImage: `url('${WASTE_IMAGES.hero}')` }}
         />
-        {/* Mobile: photo reads at the top, darkens toward the bottom where the copy sits */}
-        <div className="absolute inset-0 md:hidden bg-gradient-to-b from-slate-900/20 via-slate-900/55 to-gray-950" />
-        {/* Desktop: left-to-right darkening so the image reads on the right */}
-        <div className="absolute inset-0 hidden md:block bg-[linear-gradient(105deg,rgba(2,6,18,0.92)_0%,rgba(2,6,18,0.6)_36%,rgba(2,6,18,0)_62%)]" />
+        {/* Mobile: photo reads at the top, darkens toward the bottom where the copy sits (dark blue) */}
+        <div className="absolute inset-0 md:hidden bg-[linear-gradient(to_bottom,rgba(10,22,40,0.25)_0%,rgba(10,22,40,0.62)_55%,rgba(10,22,40,1)_100%)]" />
+        {/* Desktop: left-to-right dark-blue darkening so the image reads on the right */}
+        <div className="absolute inset-0 hidden md:block bg-[linear-gradient(105deg,rgba(10,22,40,0.94)_0%,rgba(10,22,40,0.6)_36%,rgba(10,22,40,0)_62%)]" />
       </div>
 
       {/* Red glow accent */}
@@ -83,7 +83,7 @@ export const WasteHero = () => {
       </div>
 
       {/* Trust seals — part of the hero on desktop only (mobile gets its own section below) */}
-      <div className="relative z-10 hidden md:block border-t border-white/10 bg-gray-950/55">
+      <div className="relative z-10 hidden md:block border-t border-white/10 bg-[#0a1628]">
         <WasteTrustBar />
       </div>
     </section>
