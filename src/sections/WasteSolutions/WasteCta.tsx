@@ -41,13 +41,13 @@ export const WasteCta = () => {
             </div>
             <div className="bg-red-600 h-0.5 w-9 mb-8" />
             <h2 className="font-playfair_display text-4xl tracking-[-0.54px] leading-[38.88px] mb-[22px] md:text-[64px] md:tracking-[-0.96px] md:leading-[67.2px] md:mb-7">
-              Book your
+              Book your dumpster.
               <br />
-              dumpster today<span className="text-red-600">.</span>
+              We&apos;ll handle the rest<span className="text-red-600">.</span>
             </h2>
             <p className="text-white/70 text-[15px] leading-[25.5px] max-w-[440px] mb-7 md:text-base md:leading-[27.2px] md:mb-9">
-              One 16-yard dumpster, honest pricing, and same-day delivery across
-              Northeast Florida. Book online and we'll take it from there.
+              Same-day delivery across Jacksonville &amp; Northeast Florida.
+              Reserve in under a minute.
             </p>
             <div className="flex flex-col gap-3.5 sm:flex-row sm:items-center md:gap-4">
               <ArrowButton href={WASTE_SCHEDULE_PATH} variant="primary">

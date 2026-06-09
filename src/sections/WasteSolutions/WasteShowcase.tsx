@@ -45,10 +45,9 @@ export const WasteShowcase = () => {
                   Roll-Off
                 </h2>
                 <p className="text-slate-900/70 text-sm leading-[24.5px] max-w-[400px]">
-                  One versatile size that handles most jobs — big enough for a
-                  full remodel or demolition haul, compact enough to fit on a
-                  standard driveway. Dropped where you need it, picked up when
-                  you're done.
+                  Big enough for a full remodel or demolition haul. Small enough
+                  to fit a standard driveway. You fill it — we do the heavy
+                  lifting on both ends.
                 </p>
               </div>
               <div className="mt-auto grid grid-cols-2 gap-5 pt-10 sm:grid-cols-4 md:grid-cols-2 lg:grid-cols-4">

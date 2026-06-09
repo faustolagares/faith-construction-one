@@ -1,14 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Truck, Clock, CalendarCheck, MapPin } from "lucide-react";
+import { Truck, Clock, CalendarCheck, Recycle } from "lucide-react";
 import { fadeUp, staggerContainer, viewport } from "@/lib/motion";
-import { WASTE_FREE_DELIVERY_MILES } from "@/sections/WasteSolutions/data";
 
 const POINTS = [
   { icon: Clock, label: "Same-day drop-off" },
   { icon: CalendarCheck, label: "Booked in 60 seconds" },
-  { icon: MapPin, label: `Free within ${WASTE_FREE_DELIVERY_MILES} miles` },
+  { icon: Recycle, label: "We handle the disposal" },
 ];
 
 export const WasteDeliveryBand = () => {

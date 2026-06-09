@@ -41,31 +41,31 @@ export const WasteHero = () => {
             className="flex items-center gap-x-3.5 text-white/80 text-[10px] font-semibold tracking-[2.2px] uppercase mb-5 md:text-[11px] md:tracking-[3.08px] md:mb-7"
           >
             <span className="block shrink-0 h-0.5 w-[26px] bg-red-600 md:w-9" />
-            Faith Waste Solutions
+            Faith Waste Solutions · Jacksonville, FL
           </motion.div>
 
           <motion.h1
             variants={heroFadeUp}
             className="font-playfair_display font-medium text-[42px] leading-[1.0] tracking-[-1px] md:text-[72px] md:tracking-[-1.6px]"
           >
-            Clear the clutter.
+            A dumpster on your
             <br />
-            Reclaim your space<span className="text-red-600">.</span>
+            driveway today<span className="text-red-600">.</span>
           </motion.h1>
 
           <motion.p
             variants={heroFadeUp}
             className="mt-6 text-white/80 text-base leading-[26px] max-w-[520px] md:text-lg md:leading-[30px]"
           >
-            One 16-yard dumpster handles the whole job — cleanouts, remodels,
-            construction, and demolition debris. We drop it where you need it and
-            haul it away when you're done. Booked online in under a minute.
+            One 16-yard dumpster, dropped at your door the same day. Fill it on
+            your schedule — we haul it all away and cover the dump fees. No permits
+            to chase, no carloads to the landfill, no hidden charges.
           </motion.p>
 
           {/* CTAs */}
           <motion.div variants={heroFadeUp} className="mt-9 flex flex-col gap-3.5 sm:flex-row sm:items-center md:gap-4">
             <ArrowButton href={WASTE_SCHEDULE_PATH} variant="primary">
-              Book Your Dumpster
+              Book in 60 Seconds
             </ArrowButton>
             <ArrowButton href="#how" variant="secondary">
               See How It Works
@@ -75,7 +75,7 @@ export const WasteHero = () => {
           <motion.div variants={heroFadeUp} className="mt-7 flex items-center gap-x-2.5 text-white/70">
             <Truck className="h-5 w-5 text-red-500" />
             <span className="text-[12px] font-bold tracking-[1.5px] uppercase">
-              Same-Day Delivery Available
+              Same-day delivery · Licensed &amp; insured · 1 ton disposal included
             </span>
           </motion.div>
         </div>
