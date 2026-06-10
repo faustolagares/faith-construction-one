@@ -7,6 +7,8 @@ export interface ServiceItem {
   intro: string;
   includes: string[];
   image: string;
+  /** Project categories (from src/data/projects) used to build the gallery. */
+  galleryCategories: string[];
   metaTitle: string;
   metaDescription: string;
 }
@@ -28,6 +30,7 @@ export const SERVICES: ServiceItem[] = [
       "Clean job site and on-time completion",
     ],
     image: "/assets/paver/faith-construction-photo-paver-carousel-1.avif",
+    galleryCategories: ["Paver Installation", "Patio & Pool Deck"],
     metaTitle: "Paver Installation in Jacksonville, FL | Driveways, Patios & Pool Decks",
     metaDescription:
       "Custom paver installation across Northeast Florida by Faith Construction One. Driveways, patios, walkways, and pool decks built to last. Licensed, insured, 5.0 rated.",
@@ -48,6 +51,7 @@ export const SERVICES: ServiceItem[] = [
       "One team, on schedule, until it is done",
     ],
     image: "https://imagedelivery.net/O1Es2ZMHV0HF7g71pX5Prg/60dfc00b-a528-4285-ea4c-26c10f6c2500/public",
+    galleryCategories: ["Kitchen Remodeling", "Interior Improvements"],
     metaTitle: "Kitchen Remodeling in Jacksonville, FL | Faith Construction One",
     metaDescription:
       "Full kitchen remodels in Northeast Florida by Faith Construction One. One team, quality materials, honest pricing, finished on schedule. Licensed, insured, 5.0 rated.",
@@ -68,6 +72,7 @@ export const SERVICES: ServiceItem[] = [
       "Clean, on-time, detail-focused work",
     ],
     image: "https://imagedelivery.net/O1Es2ZMHV0HF7g71pX5Prg/da6ed5f3-17f4-4f71-049b-f25ec7242b00/public",
+    galleryCategories: ["Interior Improvements", "LVP Flooring"],
     metaTitle: "Bathroom Remodeling in Jacksonville, FL | Faith Construction One",
     metaDescription:
       "Timeless bathroom remodels in Northeast Florida by Faith Construction One. Quality tile, proper waterproofing, clean work, finished on schedule. Licensed and insured.",
@@ -88,6 +93,7 @@ export const SERVICES: ServiceItem[] = [
       "Design and material guidance throughout",
     ],
     image: "https://imagedelivery.net/O1Es2ZMHV0HF7g71pX5Prg/5e2f5a95-2981-4791-f228-a07845550b00/public",
+    galleryCategories: ["Outdoor Living", "Patio & Pool Deck", "Paver Installation"],
     metaTitle: "Outdoor Living Spaces in Jacksonville, FL | Faith Construction One",
     metaDescription:
       "Outdoor living spaces across Northeast Florida by Faith Construction One. Travertine pool decks, waterfalls, turf, and hardscape built for Florida. 5.0 rated.",
@@ -108,6 +114,7 @@ export const SERVICES: ServiceItem[] = [
       "Professional, clean, fast installation",
     ],
     image: "https://imagedelivery.net/O1Es2ZMHV0HF7g71pX5Prg/8f52a176-55bb-43a1-9d0e-c43fd8159e00/public",
+    galleryCategories: ["Interior Improvements", "LVP Flooring", "Kitchen Remodeling"],
     metaTitle: "Interior Improvements & LVP Flooring in Jacksonville, FL | Faith Construction One",
     metaDescription:
       "Interior improvements in Northeast Florida by Faith Construction One. LVP flooring, accent walls, trim, and finishes installed clean and fast. Licensed and insured.",

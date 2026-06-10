@@ -22,6 +22,19 @@ export const fadeLeft: Variants = {
   visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease } },
 };
 
+// Enters from the right — pair with fadeLeft so two columns converge.
+export const fadeRight: Variants = {
+  hidden: { opacity: 1, x: 24 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease } },
+};
+
+// Subtle scale "settle" — for imagery/cards, so the eye lands on the image
+// rather than another slide-up. SSR-safe (no opacity change).
+export const zoomIn: Variants = {
+  hidden: { opacity: 1, scale: 0.94 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.7, ease } },
+};
+
 export const staggerContainer: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },

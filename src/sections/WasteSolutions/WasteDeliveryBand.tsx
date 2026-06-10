@@ -1,23 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Truck, Clock, CalendarCheck, Recycle } from "lucide-react";
-import { fadeUp, staggerContainer, viewport } from "@/lib/motion";
+import { Zap, Clock, CalendarClock, Recycle } from "lucide-react";
+import { fadeLeft, fadeRight, staggerContainer, viewport } from "@/lib/motion";
 
 const POINTS = [
   { icon: Clock, label: "Same-day drop-off" },
-  { icon: CalendarCheck, label: "Booked in 60 seconds" },
+  { icon: CalendarClock, label: "Booked in 60 seconds" },
   { icon: Recycle, label: "We handle the disposal" },
 ];
 
 export const WasteDeliveryBand = () => {
   return (
-    <section className="relative bg-red-600 text-white overflow-hidden px-5 py-10 md:px-8 md:py-14 lg:px-10">
-      {/* subtle depth + faint star motif */}
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_12%_50%,rgba(0,0,0,0.14)_0%,rgba(0,0,0,0)_55%)]" />
-      <span
+    <section className="relative bg-red-600 text-white overflow-hidden px-5 py-11 md:px-8 md:py-14 lg:px-10">
+      {/* Subtle diagonal sheen for depth, no repeating pattern */}
+      <div
         aria-hidden="true"
-        className="absolute -right-6 top-1/2 hidden -translate-y-1/2 h-44 w-44 bg-white opacity-[0.06] md:block [clip-path:polygon(50%_0%,61%_35%,98%_35%,68%_57%,79%_91%,50%_70%,21%_91%,32%_57%,2%_35%,39%_35%)]"
+        className="absolute inset-0 pointer-events-none bg-[linear-gradient(115deg,rgba(255,255,255,0.10)_0%,transparent_42%)]"
       />
 
       <motion.div
@@ -25,34 +24,33 @@ export const WasteDeliveryBand = () => {
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
-        className="relative mx-auto flex max-w-[1440px] flex-col gap-9 lg:flex-row lg:items-center lg:justify-between"
+        className="relative mx-auto flex max-w-[1440px] flex-col gap-y-9 lg:flex-row lg:items-center lg:justify-between lg:gap-x-12"
       >
         {/* Headline */}
-        <motion.div variants={fadeUp} className="flex items-center gap-x-5">
-          <Truck className="h-12 w-12 shrink-0 md:h-14 md:w-14" strokeWidth={1.25} />
-          <div>
-            <div className="text-[11px] font-bold tracking-[2.4px] uppercase text-white/80 mb-2">
-              Same-Day Delivery
-            </div>
-            <h2 className="font-playfair_display text-[28px] leading-[1.04] font-medium md:text-[40px] md:leading-[1.02]">
-              Order today.
-              <br className="sm:hidden" /> We deliver today.
-            </h2>
+        <motion.div variants={fadeLeft} className="lg:max-w-[520px]">
+          <div className="flex items-center gap-x-2.5 text-white/85 text-[11px] font-bold tracking-[2.4px] uppercase mb-4">
+            <Zap className="h-4 w-4" strokeWidth={2.25} fill="currentColor" />
+            Same-Day Delivery
           </div>
+          <h2 className="font-playfair_display text-[28px] leading-[1.03] font-medium md:text-[40px] md:leading-[1.0]">
+            Order today.
+            <br />
+            We deliver today.
+          </h2>
         </motion.div>
 
-        {/* Points */}
+        {/* Points — even 3-up, separated by hairlines */}
         <motion.div
-          variants={fadeUp}
-          className="flex flex-col gap-y-5 sm:flex-row sm:items-center sm:gap-y-0 sm:divide-x sm:divide-white/25"
+          variants={fadeRight}
+          className="grid grid-cols-1 divide-y divide-white/20 sm:grid-cols-3 sm:divide-y-0 sm:divide-x sm:divide-white/20"
         >
           {POINTS.map(({ icon: Icon, label }) => (
             <div
               key={label}
-              className="flex items-center gap-x-3 sm:px-6 lg:px-7 sm:first:pl-0 sm:last:pr-0"
+              className="flex items-center gap-x-3 py-3.5 sm:flex-col sm:items-center sm:gap-y-3 sm:py-0 sm:px-7 sm:text-center lg:px-8"
             >
-              <Icon className="h-6 w-6 shrink-0" strokeWidth={1.5} />
-              <span className="text-[12px] font-bold tracking-[1.4px] uppercase whitespace-nowrap">
+              <Icon className="h-7 w-7 shrink-0 md:h-8 md:w-8" strokeWidth={1.5} />
+              <span className="text-[12px] font-bold tracking-[1.4px] uppercase leading-tight whitespace-nowrap">
                 {label}
               </span>
             </div>

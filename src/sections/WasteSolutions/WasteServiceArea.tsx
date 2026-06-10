@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import { MapPin, Clock, ShieldCheck } from "lucide-react";
-import { fadeUp, fadeLeft, staggerContainer, viewport } from "@/lib/motion";
+import { MapDisplay } from "@/sections/ServiceAreaSection/components/MapDisplay";
+import { fadeUp, staggerContainer, viewport } from "@/lib/motion";
 import { ArrowButton } from "@/sections/WasteSolutions/components/ArrowButton";
 import {
   WASTE_SERVICE_ZIP,
@@ -14,7 +15,7 @@ const POINTS = [
   {
     icon: MapPin,
     title: `${WASTE_FREE_DELIVERY_MILES}-mile delivery radius`,
-    desc: `Free delivery within ${WASTE_FREE_DELIVERY_MILES} miles of ${WASTE_SERVICE_ZIP} — covering Jacksonville and Northeast Florida.`,
+    desc: `Free delivery within ${WASTE_FREE_DELIVERY_MILES} miles of ${WASTE_SERVICE_ZIP}, covering Jacksonville and Northeast Florida.`,
   },
   {
     icon: Clock,
@@ -30,14 +31,26 @@ const POINTS = [
 
 export const WasteServiceArea = () => {
   return (
-    <section className="relative bg-gray-950 overflow-hidden px-5 py-16 md:px-8 md:py-[110px] lg:px-10">
-      <div className="relative z-[2] mx-auto w-full max-w-[1440px]">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20 lg:items-center">
+    <section className="relative bg-gray-950 isolate overflow-hidden pt-16 pb-12 px-5 md:pt-[110px] md:pb-20 md:px-8 lg:px-10 before:content-[''] before:absolute before:inset-0 before:z-[2] before:pointer-events-none before:bg-[linear-gradient(rgba(5,12,22,0.96)_0%,rgba(5,12,22,0.65)_28%,rgba(5,12,22,0.55)_100%)] md:before:bg-[linear-gradient(90deg,rgba(5,12,22,0.96)_0%,rgba(5,12,22,0.85)_22%,rgba(5,12,22,0)_45%)]">
+      {/* Desktop map — full-bleed background, edges masked into the dark bg */}
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewport}
+        className="hidden md:block"
+      >
+        <MapDisplay />
+      </motion.div>
+
+      <div className="relative z-[4] mx-auto w-full max-w-[1440px] md:min-h-[560px]">
+        <div className="relative grid grid-cols-1 md:grid-cols-[minmax(420px,520px)_1fr] items-start gap-8 md:gap-x-[60px]">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={viewport}
+            className="relative z-[5]"
           >
             <motion.div variants={fadeUp} className="text-red-600 text-[11px] font-bold tracking-[2.64px] uppercase mb-5">
               Service Area
@@ -48,6 +61,7 @@ export const WasteServiceArea = () => {
             >
               Serving Jacksonville &amp; beyond<span className="text-red-600">.</span>
             </motion.h2>
+
             <motion.div variants={staggerContainer} className="mt-9 flex flex-col gap-y-7">
               {POINTS.map((point) => {
                 const Icon = point.icon;
@@ -68,28 +82,14 @@ export const WasteServiceArea = () => {
                 Book Your Dumpster
               </ArrowButton>
             </motion.div>
+
+            {/* Mobile map — inline, same masked treatment as the home section */}
+            <motion.div variants={fadeUp} className="-mx-5 mt-10 md:hidden">
+              <MapDisplay imageSrc="/map-jax.png" showMarkers={false} />
+            </motion.div>
           </motion.div>
 
-          <motion.div
-            variants={fadeLeft}
-            initial="hidden"
-            whileInView="visible"
-            viewport={viewport}
-            className="relative border border-white/10 overflow-hidden"
-          >
-            <img
-              src="/map-jax.png"
-              alt={`Service area map centered on ${WASTE_SERVICE_ZIP}, Jacksonville, Florida`}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-950/70 via-transparent to-transparent pointer-events-none" />
-            <div className="absolute bottom-5 left-5 flex items-center gap-x-2.5 bg-gray-950/80 backdrop-blur px-4 py-2.5 border border-white/10">
-              <MapPin className="h-4 w-4 text-red-500" />
-              <span className="text-[12px] font-bold tracking-[1.5px] uppercase">
-                {WASTE_SERVICE_ZIP} · Jacksonville, FL
-              </span>
-            </div>
-          </motion.div>
+          <div className="hidden md:block" />
         </div>
       </div>
     </section>

@@ -2,9 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { fadeUp, staggerContainer, viewport } from "@/lib/motion";
+import { fadeUp, staggerContainer, zoomIn, viewport } from "@/lib/motion";
 import { ArrowButton } from "@/sections/WasteSolutions/components/ArrowButton";
-import { WASTE_SCHEDULE_PATH } from "@/sections/WasteSolutions/data";
 
 const featuredFeatures = [
   { label: "Driveways", iconSrc: "https://c.animaapp.com/moprd4x8gGBWRx/assets/icon-13.svg" },
@@ -16,6 +15,7 @@ const featuredFeatures = [
 const serviceCards = [
   {
     id: "kitchen",
+    slug: "kitchen-remodeling",
     title: "Kitchen",
     titleSecondLine: "Remodeling",
     description: "Functional kitchens designed around the way you live.",
@@ -24,6 +24,7 @@ const serviceCards = [
   },
   {
     id: "bathroom",
+    slug: "bathroom-remodeling",
     title: "Bathroom",
     titleSecondLine: "Remodeling",
     description: "Comfortable spaces with quality materials and timeless details.",
@@ -32,6 +33,7 @@ const serviceCards = [
   },
   {
     id: "interior",
+    slug: "interior-improvements",
     title: "Interior",
     titleSecondLine: "Improvements",
     description: "Upgrades that add beauty, function, and long-term value.",
@@ -40,6 +42,7 @@ const serviceCards = [
   },
   {
     id: "outdoor",
+    slug: "outdoor-living",
     title: "Outdoor",
     titleSecondLine: "Living",
     description: "Outdoor spaces designed for relaxation and connection.",
@@ -68,8 +71,8 @@ export const ServicesShowcaseSection = () => {
   }, []);
 
   return (
-    <section id="services" className="relative bg-gray-950 overflow-hidden px-5 py-16 scroll-mt-28 md:px-8 md:py-[110px] lg:px-10">
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_50%_0%,rgba(204,31,45,0.08)_0%,rgba(3,7,18,0)_38%)]" />
+    <section id="services" className="relative bg-stone-100 text-slate-900 overflow-hidden px-5 py-16 scroll-mt-28 border-t border-stone-200 md:px-8 md:py-[110px] lg:px-10">
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_50%_0%,rgba(204,31,45,0.06)_0%,rgba(245,245,244,0)_42%)]" />
       <div className="relative z-[2] mx-auto w-full max-w-[1440px]">
         <motion.div
           variants={fadeUp}
@@ -86,7 +89,7 @@ export const ServicesShowcaseSection = () => {
             <br />
             Homes improved with care<span className="text-red-600">.</span>
           </h2>
-          <p className="mx-auto max-w-[620px] text-white/70 text-sm leading-[24.5px] md:text-[15px] md:leading-[27px]">
+          <p className="mx-auto max-w-[620px] text-slate-900/70 text-sm leading-[24.5px] md:text-[15px] md:leading-[27px]">
             Faith Construction One delivers paver installations, outdoor living spaces, and residential remodeling with clear planning, dependable communication, and craftsmanship built to last.
           </p>
         </motion.div>
@@ -96,10 +99,10 @@ export const ServicesShowcaseSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
-          className="relative border border-white/10 overflow-hidden mb-5 md:mb-6"
+          className="relative border border-stone-200 overflow-hidden mb-5 md:mb-6"
         >
           <div className="grid grid-cols-1 md:grid-cols-[0.92fr_1.45fr] min-h-[620px] md:min-h-[680px]">
-            <div className="relative z-[2] flex flex-col bg-gray-950/88 backdrop-blur-[1px] px-5 py-6 md:px-9 md:py-10">
+            <div className="relative z-[2] flex flex-col bg-white px-5 py-6 md:px-9 md:py-10">
               <div>
                 <div className="text-red-600 text-[11px] font-bold tracking-[2.2px] uppercase mb-8">
                   Featured Service
@@ -108,23 +111,28 @@ export const ServicesShowcaseSection = () => {
                 <h3 className="font-playfair_display text-[34px] leading-[1.05] font-medium mb-5 md:text-[52px]">
                   Paver Installations
                 </h3>
-                <p className="text-white/72 text-sm leading-[24.5px] max-w-[380px]">
+                <p className="text-slate-900/72 text-sm leading-[24.5px] max-w-[380px]">
                   Driveways, patios, walkways, and pool decks designed to add structure, beauty, and long-term value to your home.
                 </p>
+                <div className="mt-7 flex">
+                  <ArrowButton href="/services/paver-installation" variant="primary">
+                    Explore Paver Installation
+                  </ArrowButton>
+                </div>
               </div>
               <div className="mt-auto grid grid-cols-2 gap-5 pt-10 sm:grid-cols-4 md:grid-cols-2 lg:grid-cols-4">
                 {featuredFeatures.map((feature) => (
-                  <div key={feature.label} className="relative border-t border-white/10 pt-5">
-                    <img src={feature.iconSrc} alt="" className="h-10 w-10 mb-4 opacity-90" />
+                  <div key={feature.label} className="relative border-t border-stone-200 pt-5">
+                    <img src={feature.iconSrc} alt="" className="h-10 w-10 mb-4 opacity-70 [filter:brightness(0)]" />
                     <span className="block h-px w-8 bg-red-600 mb-3" />
-                    <div className="text-[10px] font-bold tracking-[1.8px] uppercase text-white/85">
+                    <div className="text-[10px] font-bold tracking-[1.8px] uppercase text-slate-900/80">
                       {feature.label}
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="relative aspect-[3/4] overflow-hidden bg-gray-950 md:aspect-auto md:min-h-0">
+            <div className="relative aspect-[3/4] overflow-hidden bg-stone-200 md:aspect-auto md:min-h-0">
               <AnimatePresence mode="sync">
                 <motion.div
                   key={featuredCarouselImages[featuredImageIndex]}
@@ -136,8 +144,7 @@ export const ServicesShowcaseSection = () => {
                   style={{ backgroundImage: `url('${featuredCarouselImages[featuredImageIndex]}')` }}
                 />
               </AnimatePresence>
-              <div className="absolute inset-0 bg-gradient-to-r from-gray-950/55 via-gray-950/20 to-transparent md:from-gray-950/28 md:via-transparent" />
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-950/65 via-transparent to-gray-950/20" />
+              <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-transparent to-transparent md:from-white/40" />
             </div>
           </div>
         </motion.div>
@@ -150,76 +157,35 @@ export const ServicesShowcaseSection = () => {
           className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 md:gap-5"
         >
           {serviceCards.map((card) => (
-            <motion.article
+            <motion.a
               key={card.id}
               id={card.id}
-              variants={fadeUp}
-              className="group relative aspect-[3/4] overflow-hidden border border-white/10 bg-gray-950 scroll-mt-28"
+              href={`/services/${card.slug}`}
+              variants={zoomIn}
+              className="group block bg-white border border-stone-200 overflow-hidden scroll-mt-28 transition-colors hover:border-stone-300"
             >
-              <div
-                className="absolute inset-0 hidden bg-cover bg-center transition-transform duration-700 group-hover:scale-105 md:block"
-                style={{ backgroundImage: `url('${card.imageUrl}')` }}
-              />
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 md:hidden"
-                style={{ backgroundImage: `url('${card.mobileImageUrl ?? card.imageUrl}')` }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/62 to-transparent" />
-              <div className="absolute inset-0 bg-gradient-to-b from-gray-950/18 via-transparent to-transparent" />
-              <div className="relative z-[2] flex h-full flex-col justify-end p-6 md:p-7">
-                <img src={card.iconSrc} alt="" className="h-11 w-11 mb-5 opacity-90 md:mb-2" />
-                <span className="block h-px w-9 bg-red-600 mb-5 md:mb-2" />
-                <h3 className="font-playfair_display text-[26px] leading-[1.06] font-medium mb-4 md:mb-1.5">
-                  {card.title}
-                  <br />
-                  {card.titleSecondLine}
+              <div className="relative aspect-[4/3] overflow-hidden bg-stone-200">
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                  style={{ backgroundImage: `url('${card.imageUrl}')` }}
+                />
+              </div>
+              <div className="p-6">
+                <img src={card.iconSrc} alt="" className="h-9 w-9 mb-4 opacity-70 [filter:brightness(0)]" />
+                <span className="block h-px w-9 bg-red-600 mb-4" />
+                <h3 className="font-playfair_display text-[22px] leading-[1.1] font-medium text-slate-900 mb-2 transition-colors group-hover:text-red-600">
+                  {card.title} {card.titleSecondLine}
                 </h3>
-                <p className="text-white/72 text-[13px] leading-[21px] max-w-[230px]">
+                <p className="text-slate-900/60 text-[13.5px] leading-[20px] mb-5">
                   {card.description}
                 </p>
+                <span className="inline-flex items-center gap-x-2.5 text-[10px] font-bold tracking-[1.8px] uppercase text-slate-900">
+                  Learn More
+                  <span className="relative bg-red-600 block h-px w-3.5 transition-all group-hover:w-6 after:content-[''] after:absolute after:block after:h-[6px] after:w-[6px] after:border-r after:border-t after:border-red-600 after:rotate-45 after:top-[-2.5px] after:right-0" />
+                </span>
               </div>
-            </motion.article>
+            </motion.a>
           ))}
-        </motion.div>
-
-        {/* Waste Solutions — a vertical of Faith */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewport}
-          className="group relative mt-4 grid grid-cols-1 overflow-hidden border border-white/10 md:mt-5 md:grid-cols-[0.92fr_1.45fr]"
-        >
-          <div className="relative z-[2] flex flex-col justify-center bg-gray-950 px-6 py-9 md:px-9 md:py-14">
-            <div className="text-red-600 text-[11px] font-bold tracking-[2.2px] uppercase mb-6">
-              Faith Waste Solutions
-              <span className="block h-px w-10 bg-red-600 mt-4" />
-            </div>
-            <h3 className="font-playfair_display text-[32px] leading-[1.04] font-medium mb-4 md:text-[46px]">
-              Dumpster Rentals
-            </h3>
-            <p className="text-white/72 text-sm leading-[24.5px] max-w-[400px] mb-8">
-              Need to haul it all away? Faith Waste Solutions delivers 16-yard
-              dumpsters for cleanouts, remodels, construction, and demolition
-              debris across Northeast Florida.
-            </p>
-            <div className="flex flex-col gap-3.5 sm:flex-row sm:items-center md:gap-4">
-              <ArrowButton href="/waste-solutions" variant="primary">
-                Explore Waste Solutions
-              </ArrowButton>
-              <ArrowButton href={WASTE_SCHEDULE_PATH} variant="secondary">
-                Book a Dumpster
-              </ArrowButton>
-            </div>
-          </div>
-          <div className="relative aspect-[16/10] overflow-hidden bg-gray-900 md:aspect-auto md:min-h-[540px]">
-            <div
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-              style={{ backgroundImage: "url('/assets/waste/dumpster-hero.webp')" }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-950/60 via-transparent to-transparent md:from-gray-950 md:via-gray-950/10" />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-950/45 via-transparent to-transparent" />
-          </div>
         </motion.div>
       </div>
     </section>
