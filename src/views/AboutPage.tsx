@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ShieldCheck, Clock, MessageSquare, Palette } from "lucide-react";
 import { Navbar } from "@/sections/Navbar";
 import { Footer } from "@/sections/Footer";
-import { ArrowButton } from "@/sections/WasteSolutions/components/ArrowButton";
+import { ArrowButton } from "@/components/ArrowButton";
 import { heroFadeUp, heroStagger, fadeUp, fadeLeft, staggerContainer, viewport } from "@/lib/motion";
 
 const REVIEWS_URL = "https://share.google/Xqbs4W4pwRYgJBvoX";
@@ -110,29 +110,21 @@ export const AboutPage = () => {
         </motion.div>
       </section>
 
-      {/* Two verticals */}
+      {/* Construction services */}
       <section className="relative bg-gray-950 overflow-hidden px-5 py-16 md:px-8 md:py-[100px] lg:px-10">
         <div className="mx-auto w-full max-w-[1440px]">
           <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport} className="mb-10">
-            <div className="text-red-600 text-[11px] font-bold tracking-[2.64px] uppercase mb-5">Two Ways We Help</div>
+            <div className="text-red-600 text-[11px] font-bold tracking-[2.64px] uppercase mb-5">What We Do</div>
             <h2 className="font-playfair_display font-medium text-[30px] leading-[1.1] tracking-[-0.6px] md:text-[44px] md:tracking-[-0.88px]">
-              One company, two specialties<span className="text-red-600">.</span>
+              One team for your whole home<span className="text-red-600">.</span>
             </h2>
           </motion.div>
-          <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewport} className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
-            <motion.a variants={fadeUp} href="/services/paver-installation" className="group border border-white/10 bg-white/[0.02] p-8 transition-colors hover:border-white/25 md:p-10">
+          <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewport} className="grid grid-cols-1">
+            <motion.a variants={fadeUp} href="/services" className="group border border-white/10 bg-white/[0.02] p-8 transition-colors hover:border-white/25 md:p-10">
               <div className="font-playfair_display text-[26px] font-medium mb-3">Construction &amp; Remodeling</div>
               <p className="text-white/65 text-sm leading-[23px] mb-6">Pavers, kitchens, bathrooms, outdoor living, and interior improvements across Northeast Florida.</p>
               <span className="inline-flex items-center gap-x-3 text-[11px] font-bold tracking-[1.76px] uppercase text-white group-hover:text-red-500 transition-colors">
                 Explore Services
-                <span className="relative bg-white block h-px w-[18px] transition-transform group-hover:translate-x-1 after:content-[''] after:absolute after:block after:h-[7px] after:w-[7px] after:border-r after:border-t after:border-white after:rotate-45 after:top-[-3px] after:right-0" />
-              </span>
-            </motion.a>
-            <motion.a variants={fadeUp} href="/waste-solutions" className="group border border-white/10 bg-white/[0.02] p-8 transition-colors hover:border-white/25 md:p-10">
-              <div className="font-playfair_display text-[26px] font-medium mb-3">Faith Waste Solutions</div>
-              <p className="text-white/65 text-sm leading-[23px] mb-6">16-yard dumpster rentals with same-day delivery for cleanouts, remodels, and demolition debris.</p>
-              <span className="inline-flex items-center gap-x-3 text-[11px] font-bold tracking-[1.76px] uppercase text-white group-hover:text-red-500 transition-colors">
-                Dumpster Rentals
                 <span className="relative bg-white block h-px w-[18px] transition-transform group-hover:translate-x-1 after:content-[''] after:absolute after:block after:h-[7px] after:w-[7px] after:border-r after:border-t after:border-white after:rotate-45 after:top-[-3px] after:right-0" />
               </span>
             </motion.a>

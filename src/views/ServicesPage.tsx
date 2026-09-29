@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Navbar } from "@/sections/Navbar";
 import { Footer } from "@/sections/Footer";
-import { ArrowButton } from "@/sections/WasteSolutions/components/ArrowButton";
+import { ArrowButton } from "@/components/ArrowButton";
 import { heroFadeUp, heroStagger, fadeLeft, zoomIn, staggerContainerFast, viewport } from "@/lib/motion";
 import { SERVICES } from "@/lib/services";
 
@@ -73,16 +73,6 @@ export const ServicesPage = () => {
               </motion.a>
             ))}
 
-            {/* Waste Solutions cross-link */}
-            <motion.a variants={zoomIn} href="/waste-solutions" className="group flex flex-col justify-center bg-gray-950 text-white border border-gray-950 overflow-hidden p-7 md:p-9">
-              <div className="text-red-500 text-[10px] font-bold tracking-[1.8px] uppercase mb-3">Also from Faith</div>
-              <h3 className="font-playfair_display text-[24px] font-medium leading-[1.12] mb-3">Dumpster Rentals</h3>
-              <p className="text-white/65 text-[13.5px] leading-[20px] mb-6">16-yard roll-off dumpsters with same-day delivery for your cleanout, remodel, or demolition.</p>
-              <span className="inline-flex items-center gap-x-3 text-[11px] font-bold tracking-[1.76px] uppercase text-white group-hover:text-red-500 transition-colors">
-                Explore Waste Solutions
-                <span className="relative bg-white block h-px w-[18px] transition-transform group-hover:translate-x-1 after:content-[''] after:absolute after:block after:h-[6px] after:w-[6px] after:border-r after:border-t after:border-white after:rotate-45 after:top-[-3px] after:right-0" />
-              </span>
-            </motion.a>
           </motion.div>
         </div>
       </section>

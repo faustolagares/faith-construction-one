@@ -4,7 +4,6 @@ import { TrustBar } from "@/sections/TrustBar";
 import { WhyChooseSection } from "@/sections/WhyChooseSection";
 import { ServicesSection } from "@/sections/ServicesSection";
 import { ServicesShowcaseSection } from "@/sections/ServicesShowcaseSection";
-import { WasteHomeSection } from "@/sections/WasteHomeSection";
 import { ProjectsSection } from "@/sections/ProjectsSection";
 import { ReviewsSection } from "@/sections/ReviewsSection";
 import { ServiceAreaSection } from "@/sections/ServiceAreaSection";
@@ -24,7 +23,6 @@ export default function HomePage() {
       <WhyChooseSection />
       <ServicesSection />
       <ServicesShowcaseSection />
-      <WasteHomeSection />
       <ProjectsSection />
       <ReviewsSection />
       <ServiceAreaSection />
