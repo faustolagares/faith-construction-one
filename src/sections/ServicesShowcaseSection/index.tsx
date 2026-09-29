@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { fadeUp, staggerContainer, zoomIn, viewport } from "@/lib/motion";
-import { ArrowButton } from "@/sections/WasteSolutions/components/ArrowButton";
+import { ArrowButton } from "@/components/ArrowButton";
 
 const featuredFeatures = [
   { label: "Driveways", iconSrc: "https://c.animaapp.com/moprd4x8gGBWRx/assets/icon-13.svg" },

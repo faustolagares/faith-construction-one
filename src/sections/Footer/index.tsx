@@ -35,7 +35,6 @@ export const Footer = () => {
                 { text: "Bathroom Remodeling", href: "/services/bathroom-remodeling" },
                 { text: "Outdoor Living", href: "/services/outdoor-living" },
                 { text: "Interior Improvements", href: "/services/interior-improvements" },
-                { text: "Dumpster Rentals", href: "/waste-solutions" },
               ]}
             />
           </motion.div>

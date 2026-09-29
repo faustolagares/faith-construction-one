@@ -38,8 +38,6 @@ export function organizationSchema() {
     email: "hello@faithconstructionone.com",
     telephone: PHONE,
     address: POSTAL_ADDRESS,
-    // brand vertical
-    brand: { "@type": "Brand", name: "Faith Waste Solutions" },
   };
 }
 
@@ -65,28 +63,6 @@ export function localBusinessSchema() {
     },
     parentOrganization: { "@id": ORG_ID },
     // TODO(inputs): openingHoursSpecification, sameAs (social profiles), license #.
-  };
-}
-
-export function wasteServiceSchema() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Dumpster Rental, 16-Yard Roll-Off",
-    serviceType: "Dumpster rental",
-    provider: {
-      "@type": "Organization",
-      name: "Faith Waste Solutions",
-      parentOrganization: { "@id": ORG_ID },
-      telephone: "+1-904-566-3799",
-      url: `${SITE_URL}/waste-solutions`,
-    },
-    areaServed: AREA_SERVED,
-    offers: [
-      { "@type": "Offer", name: "Daily Rental", price: "250", priceCurrency: "USD", description: "16-yard dumpster, includes 1 ton disposal." },
-      { "@type": "Offer", name: "Weekly Rental", price: "360", priceCurrency: "USD", description: "16-yard dumpster, 7-day rental." },
-      { "@type": "Offer", name: "Monthly Rental", price: "450", priceCurrency: "USD", description: "16-yard dumpster, 30-day rental." },
-    ],
   };
 }
 

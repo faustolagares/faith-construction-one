@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Check, ShieldCheck, Clock, Receipt, Star, MapPin } from "lucide-react";
 import { Navbar } from "@/sections/Navbar";
 import { Footer } from "@/sections/Footer";
-import { ArrowButton } from "@/sections/WasteSolutions/components/ArrowButton";
+import { ArrowButton } from "@/components/ArrowButton";
 import {
   heroFadeUp,
   heroStagger,
